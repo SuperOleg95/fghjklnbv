@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { MainContainer } from "#components";
+const { data: page } = await useAsyncData("page", () => {
+  return queryCollection("docs").first();
+});
 </script>
 
 <template>
-  <div
-    class="pt-2 h-screen scroll-hidden bg-white dark:bg-gray-900 space-y-20 // flex flex-col"
+  <!-- OLD -->
+  <!-- <div
+    class="pt-2 h-screen scroll-hidden bg-white dark:bg-gray-900 // flex flex-col"
   >
     <MainHeader />
 
@@ -21,5 +24,11 @@ import { MainContainer } from "#components";
     <MainInsights />
 
     <MainFooter />
+  </div> -->
+
+  <div
+    class="pt-2 scroll-hidden bg-white dark:bg-gray-900 space-y-20 // flex flex-col"
+  >
+    <ContentRenderer v-if="page" :value="page" />
   </div>
 </template>

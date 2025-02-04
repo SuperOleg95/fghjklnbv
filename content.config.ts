@@ -14,5 +14,13 @@ export default defineContentConfig({
       type: "page",
       source: "partners/*.md",
     }),
+    news: defineCollection({
+      type: "page",
+      source: "news/*.md",
+    }),
+    docs: defineCollection({
+      type: "page",
+      source: "docs/*.md",
+    }),
   },
 });
