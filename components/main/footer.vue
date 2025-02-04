@@ -46,11 +46,9 @@
           >
         </p>
         <p>
-          <a href="/en/contact/general-terms-and-conditions"
-            >Terms &amp; Conditions</a
-          >
-          | <a href="/en/contact/imprint">Imprint</a> |
-          <a href="/en/contact/data-protection">Data protection</a>
+          <a href="#">Terms &amp; Conditions</a>
+          | <a href="#">Imprint</a> |
+          <a href="#">Data protection</a>
         </p>
       </div>
     </div>
