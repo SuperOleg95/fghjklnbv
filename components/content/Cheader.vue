@@ -3,7 +3,11 @@
     <div class="flex justify-between p-2">
       <div class="flex">
         <NuxtImg src="/logo.png" class="object-contain h-10" />
-        <TypographyHeadline content="Schleißheimer" size="xl" />
+        <TypographyHeadline
+          content="Schleißheimer"
+          size="xl"
+          class="hidden xl:block"
+        />
       </div>
 
       <MainMegamenu />
