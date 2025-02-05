@@ -1,0 +1,1 @@
+import{j as s,c as t,e as c,f as o,H as n}from"./DG8pevss.js";const _={},r={class:"flex justify-center pb-20"},a={class:"w-[1000px] xl:w-[1280px]"};function l(e,d){return t(),c("div",r,[o("div",a,[n(e.$slots,"default")])])}const i=s(_,[["render",l]]);export{i as _};
