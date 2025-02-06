@@ -1,9 +1,10 @@
 ---
-color: lime
-date: "02.02.2025"
+color: red
+date: "01.02.2025"
+button: Read now
 ---
 
-Good news
+New conference report 2024
 
 <!--more-->
 

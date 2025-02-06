@@ -1,23 +1,23 @@
-::cheader
+::top
 ::
 
-::cswiper
+::swiper
 ::
 
-::cquote
+::quote
 ::
 
-::ccollection
+::collection
 ::
 
-::crefs
+::refs
 ::
 
-::creport
+::report
 ::
 
-::cinsights
+::insights
 ::
 
-::cfooter
+::about
 ::

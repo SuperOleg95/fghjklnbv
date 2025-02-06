@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="flex justify-center gap-20 bg-gray-200 dark:bg-gray-700 p-10">
     <div class="flex flex-col gap-3">

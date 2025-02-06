@@ -22,5 +22,9 @@ export default defineContentConfig({
       type: "page",
       source: "docs/*.md",
     }),
+    event: defineCollection({
+      type: "page",
+      source: "event/*.md",
+    }),
   },
 });
