@@ -45,19 +45,18 @@ function clickOnLanguage(code: string) {
 </script>
 
 <template>
-  <UDropdown
-    :items="compSelectLanguageItem"
-    :popper="{ placement: 'bottom-end' }"
-  >
-    <UIcon
-      name="i-heroicons-globe-alt"
-      class="text-2xl text-primary hover:text-primary-200 preventShrink"
-    ></UIcon>
-    <template template #item="{ item }">
-      <div class="flex grow" @click="clickOnLanguage(item.code)">
-        <span class="truncate font-bold text-primary">{{ item.label }}</span>
-        <UAvatar :src="item.pic" class="ms-auto" size="xs" />
-      </div>
-    </template>
-  </UDropdown>
+  <UButton
+    variant="ghost"
+    class="p-0 text-black dark:text-white"
+    @click="
+      () => {
+        if (store.currentLocale == 'en-US') {
+          clickOnLanguage('de-DE');
+        } else {
+          clickOnLanguage('en-US');
+        }
+      }
+    "
+    ><UIcon name="i-heroicons-globe-alt" class="h-8 w-8"></UIcon
+  ></UButton>
 </template>

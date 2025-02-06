@@ -8,6 +8,8 @@ const items = [
     },
   ],
 ];
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -26,7 +28,7 @@ const items = [
   >
     <UButton
       color="white"
-      label="About us"
+      :label="t('aboutUs')"
       icon="i-heroicons-briefcase"
       variant="ghost"
       class="opacity-60 hover:opacity-100"

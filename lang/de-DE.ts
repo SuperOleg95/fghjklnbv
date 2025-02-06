@@ -16,4 +16,11 @@ export default {
 
   //LangSelector.vue
   welcome: "Willkommen!",
+  schleissheimer: "Schleißheimer",
+
+  aboutUs: "Über uns",
+  software: "Software",
+  engineering: "Engineering",
+  products: "Produkte",
+  career: "Karriere",
 };
