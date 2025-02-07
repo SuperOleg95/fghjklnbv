@@ -1,1 +1,0 @@
-import{j as s,c as t,e as c,f as o,H as n}from"./lpgNQOV-.js";const _={},r={class:"flex justify-center pb-5 xl:pb-10"},a={class:"w-[1000px] xl:w-[1280px]"};function l(e,d){return t(),c("div",r,[o("div",a,[n(e.$slots,"default")])])}const p=s(_,[["render",l]]);export{p as _};
