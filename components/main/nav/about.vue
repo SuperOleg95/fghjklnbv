@@ -16,10 +16,10 @@ const { t } = useI18n();
   <UDropdown
     :items="items"
     :popper="{
-      placement: 'bottom-start',
+      placement: 'top',
     }"
     :ui="{
-      width: ' w-full',
+      width: '',
       padding: 'p-0',
       item: {
         padding: 'px-0 py-0',

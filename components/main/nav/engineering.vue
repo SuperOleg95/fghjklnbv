@@ -15,10 +15,10 @@ const { t } = useI18n();
   <UDropdown
     :items="items"
     :popper="{
-      placement: 'bottom-start',
+      placement: 'bottom',
     }"
     :ui="{
-      width: ' w-full',
+      width: '',
       padding: 'p-0',
       item: {
         padding: 'px-0 py-0',
@@ -27,7 +27,7 @@ const { t } = useI18n();
   >
     <UButton
       color="white"
-      :label="t('Engineering')"
+      :label="t('engineering')"
       icon="i-heroicons-cog-8-tooth"
       variant="ghost"
       class="opacity-60 hover:opacity-100"

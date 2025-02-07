@@ -14,7 +14,7 @@ const color = meta?.color;
   <MainContainer>
     <div class="flex grow">
       <div
-        class="flex flex-col w-1/2 bg-gray-200 dark:bg-gray-700 rounded-l-3xl justify-center px-4"
+        class="flex grow lg:grow-0 flex-col bg-gray-200 dark:bg-gray-700 rounded-l-3xl justify-center px-4"
       >
         <TypographyTitle>Event</TypographyTitle>
         <TypographyHeadline :content="description" size="lg" />
@@ -24,7 +24,9 @@ const color = meta?.color;
         }}</UButton>
       </div>
 
-      <div :class="`w-1/2 bg-${color}-500 h-[350px] rounded-r-3xl`"></div>
+      <div
+        :class="`flex grow bg-${color}-500 h-[350px] rounded-r-3xl hidden md:block`"
+      ></div>
     </div>
   </MainContainer>
 </template>
