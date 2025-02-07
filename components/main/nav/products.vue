@@ -27,18 +27,18 @@ const { t } = useI18n();
   >
     <UButton
       color="white"
-      :label="t('software')"
-      icon="i-heroicons-code-bracket"
+      :label="t('products')"
+      icon="i-heroicons-sparkles"
       variant="ghost"
       class="opacity-60 hover:opacity-100"
       size="xl"
-    />
+    ></UButton>
     <template #item="{ item }">
       <div class="w-full bg-white dark:bg-gray-900 p-8">
         <div class="flex justify-center gap-8">
           <div class="flex flex-col w-[25%] justify-center gap-4">
-            <h1 class="text-4xl text-left font-bold">Software engineering</h1>
-            <h1 class="text-xl text-left">is a big deal</h1>
+            <h1 class="text-4xl text-left font-bold">Products</h1>
+            <h1 class="text-xl text-left">what we create</h1>
             <UButton variant="outline" class="text-left w-fit" size="xl"
               >Browse solutions</UButton
             >
@@ -47,19 +47,17 @@ const { t } = useI18n();
             <div class="grid grid-cols-2 gap-4">
               <NuxtLink
                 ><h1 class="text-xl">
-                  Automotive Software-Engineering
+                  Efficient Cost Reduction with Customized Supplier Solutions
                 </h1></NuxtLink
               >
               <NuxtLink
-                ><h1 class="text-xl">
-                  Medical System & Software Engineering
-                </h1></NuxtLink
+                ><h1 class="text-xl">Measuring and Test Equipment</h1></NuxtLink
               >
-              <NuxtLink><h1 class="text-xl">Cyber Security</h1></NuxtLink>
+              <NuxtLink><h1 class="text-xl">Micro HiL Cluster</h1></NuxtLink>
             </div>
           </div>
           <div class="flex flex-col w-[25%] justify-center">
-            <img src="/main/sw.jpg" class="max-h-40 object-contain" />
+            <img src="/main/ce.png" class="max-h-40 object-contain" />
           </div>
         </div>
       </div>

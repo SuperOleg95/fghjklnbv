@@ -12,6 +12,8 @@ if (news.value) {
       date: piece.meta.date,
       color: piece.meta.color,
       path: piece.path,
+      tag: piece.meta.tag,
+      estimate: piece.meta.estimate,
     });
   }
 }
@@ -31,10 +33,18 @@ if (news.value) {
             :to="item.path"
             class="h-[500px] w-[335px] flex flex-col bg-gray-200 dark:bg-gray-600 rounded-3xl mb-2 mx-4"
           >
-            <div :class="`min-h-[60%] bg-${item.color}-500 rounded-t-3xl`">
-              <h5 class="text-right text-2xl p-5">{{ item.date }}</h5>
+            <div
+              :class="`min-h-[60%] bg-${item.color}-500 rounded-t-3xl`"
+            ></div>
+
+            <div>
+              <span class="text-base p-3 inline-block">#{{ item.tag }}</span>
+              <span><UIcon name="i-heroicons-bars-4 "></UIcon></span>
+              <span class="text-base p-5">{{ item.estimate }}</span>
             </div>
-            <h5 class="text-3xl p-5">{{ item.description }}</h5>
+            <h5 class="text-4xl p-5">{{ item.description }}</h5>
+
+            <h5 class="text-right text-base p-5">{{ item.date }}</h5>
           </NuxtLink>
         </template>
 

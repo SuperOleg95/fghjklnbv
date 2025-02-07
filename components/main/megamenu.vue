@@ -17,22 +17,8 @@ const { t } = useI18n();
   >
     <MainNavAbout />
     <MainNavSoftware />
-    <UButton
-      color="white"
-      :label="t('Engineering')"
-      icon="i-heroicons-cog-8-tooth"
-      variant="ghost"
-      class="opacity-60 hover:opacity-100"
-      size="xl"
-    ></UButton>
-    <UButton
-      color="white"
-      :label="t('products')"
-      icon="i-heroicons-sparkles"
-      variant="ghost"
-      class="opacity-60 hover:opacity-100"
-      size="xl"
-    ></UButton>
+    <MainNavEngineering />
+    <MainNavProducts />
     <UButton
       color="white"
       :label="t('career')"
@@ -45,10 +31,6 @@ const { t } = useI18n();
 </template>
 
 <style>
-.z-20 {
-  transform: translate(0px, 72px) !important;
-}
-
 #headlessui-menu-button-v-0 {
   --tw-ring-shadow: 0 !important;
 }
