@@ -21,6 +21,7 @@
     "@vueuse/motion": "^2.2.6",
     "@vueuse/nuxt": "^12.4.0",
     "nuxt": "^3.11.2",
+    "nuxt-viewport": "^2.2.0",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

@@ -19,7 +19,7 @@ if (cards.value) {
 
 <template>
   <MainContainer>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg;gap-10">
       <div v-for="item in items">
         <MainCard
           :heading="item.title"

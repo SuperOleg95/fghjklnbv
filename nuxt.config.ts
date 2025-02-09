@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxt/icon",
     "@nuxt/content",
+    "nuxt-viewport",
   ],
 
   icon: {
