@@ -1,1 +1,0 @@
-import{j as s,c as t,e as c,f as o,H as n}from"./VwykerqC.js";const _={},r={class:"flex justify-center px-5 xl:px-10 pb-5 xl:pb-10"},a={class:"w-[500px] lg:w-[1000px] xl:w-[1280px]"};function l(e,p){return t(),c("div",r,[o("div",a,[n(e.$slots,"default")])])}const d=s(_,[["render",l]]);export{d as _};
