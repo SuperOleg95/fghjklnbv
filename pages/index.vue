@@ -27,5 +27,7 @@ const { data: page } = await useAsyncData("page", () => {
     <Insights />
 
     <About />
+
+    <ScrollTop />
   </div>
 </template>
