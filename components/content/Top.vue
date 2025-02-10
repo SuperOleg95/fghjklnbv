@@ -6,33 +6,35 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
   console.log("Breakpoint updated:", oldBreakpoint, "->", newBreakpoint);
 });
 
-const links = [
-  {
-    label: "About us",
-    icon: "i-heroicons-briefcase",
-    to: "#",
-  },
-  {
-    label: "Software",
-    icon: "i-heroicons-cog-8-tooth",
-    to: "#",
-  },
-  {
-    label: "Engineering",
-    icon: "i-heroicons-command-line",
-    to: "#",
-  },
-  {
-    label: "Products",
-    icon: "i-heroicons-sparkles",
-    to: "#",
-  },
-  {
-    label: "Career",
-    icon: "i-heroicons-presentation-chart-line",
-    to: "#",
-  },
-];
+const links = computed(() => {
+  return [
+    {
+      label: t("aboutUs"),
+      icon: "i-heroicons-briefcase",
+      to: "#",
+    },
+    {
+      label: t("software"),
+      icon: "i-heroicons-cog-8-tooth",
+      to: "#",
+    },
+    {
+      label: t("engineering"),
+      icon: "i-heroicons-command-line",
+      to: "#",
+    },
+    {
+      label: t("products"),
+      icon: "i-heroicons-sparkles",
+      to: "#",
+    },
+    {
+      label: t("career"),
+      icon: "i-heroicons-presentation-chart-line",
+      to: "#",
+    },
+  ];
+});
 
 const isOpen = ref(false);
 </script>
@@ -44,7 +46,7 @@ const isOpen = ref(false);
       <MainContainer>
         <div class="flex justify-between">
           <TypographyHeadline :content="t('schleissheimer')" size="xl" />
-          <div>
+          <div class="pt-2 space-x-2">
             <CommonColorThemeSelector />
             <LangSelector />
             <UButton

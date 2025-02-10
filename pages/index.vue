@@ -6,7 +6,7 @@ const { data: page } = await useAsyncData("page", () => {
 
 <template>
   <div
-    class="p-2 bg-white dark:bg-gray-900 space-y-5 xl:space-y-10 // flex flex-col w-full"
+    class="bg-white dark:bg-gray-900 space-y-5 xl:space-y-10 // flex flex-col w-full"
   >
     <!-- <ContentRenderer v-if="page" :value="page" /> -->
     <!-- 
