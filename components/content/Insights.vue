@@ -75,11 +75,10 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
                 ></div>
 
                 <div>
-                  <span class="text-base p-3 inline-block"
+                  <span class="text-base ps-5 p-2 inline-block"
                     >#{{ item.tag }}</span
                   >
-                  <span><UIcon name="i-heroicons-bars-4 "></UIcon></span>
-                  <span class="text-base p-5">{{ item.estimate }}</span>
+                  <span class="text-base p-2">{{ item.estimate }}</span>
                 </div>
                 <h5 class="text-4xl p-5">{{ item.description }}</h5>
 

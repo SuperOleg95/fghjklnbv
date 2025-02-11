@@ -10,38 +10,52 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
   <div>
     <!-- Should render only on mobile -->
     <div v-if="viewport.isLessThan('tablet')">
-      <div class="flex flex-col gap-5 bg-gray-200 dark:bg-gray-700 p-10">
-        <div class="flex flex-col gap-2">
-          <h5 class="text-lg text-primary">Solutions</h5>
-          <NuxtLink to="#" class="flex -mt-3"
-            >Electronics Development
-            <Icon name="mdi:chevron-right" class="mt-1"></Icon
-          ></NuxtLink>
-          <NuxtLink to="#" class="flex"
-            >Software Engineering
-            <Icon name="mdi:chevron-right" class="mt-1"></Icon
-          ></NuxtLink>
-        </div>
+      <div class="flex flex-col gap-5 bg-gray-200 dark:bg-gray-700 p-4 text-sm">
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <div class="flex flex-col gap-1">
+              <h5 class="text-base text-primary">Solutions</h5>
+              <NuxtLink to="#" class="flex"
+                >Electronics Development
+                <Icon name="mdi:chevron-right" class="mt-1"></Icon
+              ></NuxtLink>
+              <NuxtLink to="#" class="flex"
+                >Software Engineering
+                <Icon name="mdi:chevron-right" class="mt-1"></Icon
+              ></NuxtLink>
 
-        <div class="flex flex-col gap-2">
-          <h5 class="text-lg text-primary">About us</h5>
-          <NuxtLink to="#" class="flex -mt-3"
-            >Company <Icon name="mdi:chevron-right" class="mt-1"></Icon
-          ></NuxtLink>
-          <NuxtLink to="#" class="flex"
-            >Competencies<Icon name="mdi:chevron-right" class="mt-1"></Icon
-          ></NuxtLink>
-          <NuxtLink to="#" class="flex"
-            >Philosophy<Icon name="mdi:chevron-right" class="mt-1"></Icon
-          ></NuxtLink>
-          <NuxtLink to="#" class="flex"
-            >Contact<Icon name="mdi:chevron-right" class="mt-1"></Icon
-          ></NuxtLink>
+              <h5 class="text-base text-primary">Follow us</h5>
+              <div class="flex">
+                <NuxtLink to="#" class="flex">
+                  <Icon name="mdi:linkedin" class="text-3xl"></Icon
+                ></NuxtLink>
+                <NuxtLink to="#" class="flex"
+                  ><Icon name="mdi:xing" class="text-3xl"></Icon
+                ></NuxtLink>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <h5 class="text-base text-primary">About us</h5>
+            <NuxtLink to="#" class="flex -mt-3"
+              >Company <Icon name="mdi:chevron-right" class="mt-1"></Icon
+            ></NuxtLink>
+            <NuxtLink to="#" class="flex"
+              >Competencies<Icon name="mdi:chevron-right" class="mt-1"></Icon
+            ></NuxtLink>
+            <NuxtLink to="#" class="flex"
+              >Philosophy<Icon name="mdi:chevron-right" class="mt-1"></Icon
+            ></NuxtLink>
+            <NuxtLink to="#" class="flex"
+              >Contact<Icon name="mdi:chevron-right" class="mt-1"></Icon
+            ></NuxtLink>
+          </div>
         </div>
 
         <div class="flex flex-col">
           <div class="entry clearfix">
-            <h5 class="text-lg text-primary">Contact</h5>
+            <h5 class="text-base text-primary">Contact</h5>
             <p>
               Schleissheimer Soft- und Hardwareentwicklung GmbH<br />
               Am Kalkofen 10<br />
@@ -61,18 +75,6 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
               | <a href="#">Imprint</a> |
               <a href="#">Data protection</a>
             </p>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-3">
-          <h5 class="text-lg text-primary">Follow us</h5>
-          <div class="flex">
-            <NuxtLink to="#" class="flex">
-              <Icon name="mdi:linkedin" class="text-3xl"></Icon
-            ></NuxtLink>
-            <NuxtLink to="#" class="flex"
-              ><Icon name="mdi:xing" class="text-3xl"></Icon
-            ></NuxtLink>
           </div>
         </div>
       </div>

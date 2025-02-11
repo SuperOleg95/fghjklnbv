@@ -18,20 +18,13 @@ if (slider.value) {
     });
   }
 }
-
-let areControllsNeeded = ref(true);
-
-onMounted(() => {
-  areControllsNeeded.value = window.screen.width < 1000 ? false : true;
-});
-
 watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
   console.log("Breakpoint updated:", oldBreakpoint, "->", newBreakpoint);
 });
 </script>
 
 <template>
-  <div class="!px-0">
+  <div class="!px-0 !mt-0">
     <!-- Should render only on mobile -->
     <div v-if="viewport.isLessThan('tablet')">
       <UCarousel
@@ -39,7 +32,6 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
         :items="items"
         :ui="{ item: 'basis-full' }"
         class="rounded-lg !mt-0 mb-10"
-        :arrows="areControllsNeeded"
         indicators
       >
         <div :class="`bg-${item.color}-500 w-full h-[480px] relative`">
@@ -59,7 +51,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
         :items="items"
         :ui="{ item: 'basis-full' }"
         class="rounded-lg"
-        :arrows="areControllsNeeded"
+        arrows
         indicators
       >
         <div :class="`bg-${item.color}-500 w-full h-[780px] relative`">

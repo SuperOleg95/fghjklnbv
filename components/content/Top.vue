@@ -94,7 +94,7 @@ const isOpen = ref(false);
 
           <MainMegamenu />
 
-          <div class="space-x-4">
+          <div class="space-x-4 pt-2">
             <CommonColorThemeSelector />
             <LangSelector />
             <UIcon name="i-heroicons-magnifying-glass" class="h-8 w-8"></UIcon>

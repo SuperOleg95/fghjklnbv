@@ -25,6 +25,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
     <div v-if="viewport.isLessThan('tablet')" class="p-4">
       <div class="text-xl font-bold text-center pb-4">{{ description }}</div>
       <ContentRenderer v-if="page" :value="page" />
+      <BackBtn />
     </div>
     <div v-else>
       <div class="flex bg-white dark:bg-gray-900 h-screen p-4 space-y-2">
@@ -33,6 +34,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
             <div class="text-3xl font-bold text-center">{{ description }}</div>
             <ContentRenderer v-if="page" :value="page" />
             <div class="text-2xl italic text-right">{{ date }}</div>
+            <BackBtn />
           </MainContainer>
         </div>
       </div>

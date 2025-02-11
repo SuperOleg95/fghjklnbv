@@ -27,6 +27,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
     <div v-if="viewport.isLessThan('tablet')" class="p-4">
       <div class="text-xl font-bold text-center pb-4">{{ description }}</div>
       <ContentRenderer v-if="page" :value="page" />
+      <BackBtn />
     </div>
     <div v-else>
       <div class="h-screen flex flex-col justify-between">
@@ -41,6 +42,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
               <UBadge size="lg" class="ms-2">{{ estimate }}</UBadge>
               <ContentRenderer v-if="page" :value="page" />
               <div class="text-2xl italic text-right">{{ date }}</div>
+              <BackBtn />
             </MainContainer>
           </div>
         </div>

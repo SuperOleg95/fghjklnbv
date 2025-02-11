@@ -34,7 +34,7 @@ const { t } = useI18n();
       size="xl"
     ></UButton>
     <template #item="{ item }">
-      <div class="w-full bg-white dark:bg-gray-900 p-8">
+      <div class="bg-white dark:bg-gray-900 p-8">
         <div class="flex justify-center gap-8">
           <div class="flex flex-col w-[25%] justify-center gap-4">
             <h1 class="text-4xl text-left font-bold">
