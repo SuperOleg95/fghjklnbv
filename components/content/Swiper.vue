@@ -47,22 +47,43 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
     <!-- Tablet window -->
     <div v-else>
       <UCarousel
-        v-slot="{ item }"
         :items="items"
-        :ui="{ item: 'basis-full' }"
+        :ui="{
+          item: 'basis-full',
+        }"
+        :prev-button="{
+          class: '!bg-transparent ',
+        }"
+        :next-button="{
+          class: '!bg-transparent ',
+        }"
         class="rounded-lg"
         arrows
         indicators
       >
-        <div :class="`bg-${item.color}-500 w-full h-[780px] relative`">
-          <div class="absolute left-[7%] top-[50%] space-y-2">
-            <h1 class="text-4xl font-bold">{{ item.title }}</h1>
-            <div class="h-1 w-40 bg-black"></div>
-            <h5 class="text-2xl">{{ item.descr }}</h5>
-            <UButton size="xl">{{ item.button }}</UButton>
+        <template #default="{ item }">
+          <div :class="`bg-${item.color}-500 w-full h-[780px] relative`">
+            <div class="absolute left-[7%] top-[50%] space-y-2">
+              <h1 class="text-4xl font-bold">{{ item.title }}</h1>
+              <div class="h-1 w-40 bg-black"></div>
+              <h5 class="text-2xl">{{ item.descr }}</h5>
+              <UButton size="xl">{{ item.button }}</UButton>
+            </div>
           </div>
-        </div>
+        </template>
       </UCarousel>
     </div>
   </div>
 </template>
+
+<style>
+.i-heroicons-chevron-left-20-solid {
+  height: 5rem !important;
+  width: 5rem !important;
+}
+
+.i-heroicons-chevron-right-20-solid {
+  height: 5rem !important;
+  width: 5rem !important;
+}
+</style>

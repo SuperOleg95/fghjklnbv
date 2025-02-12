@@ -53,163 +53,187 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
 </script>
 
 <template>
-  <div class="w-screen">
-    <Top />
-    <BlockContainer class="max-w-fit">
-      <TypographyTitle>Electronics-development</TypographyTitle>
-      <TypographyHeadline
-        content="Efficient Cost Reduction with Customized Supplier Solutions"
-        size="lg"
-      />
-      <h1 class="xl:text-lg pt-2">
-        From idea to finished system – including consultation and design:
-        Everything you need to shape the market of the future with
-        groundbreaking products. We provide the technical expertise to realize
-        your custom electronic solutions. Your vision is the starting point.
-        With us, you gain a technology partner that supports your product
-        throughout its entire lifecycle – even beyond the start of series
-        production. Our expertise spans various industries, including
-        automotive, medical technology, special vehicle construction, industrial
-        communication, and industrial digital printing. At the same time, we are
-        open to new challenges and ready to implement innovative solutions in
-        other areas. Through our comprehensive support from idea to series
-        production, we help you reduce initial development costs and make your
-        product efficient and future-proof."
-      </h1>
-      <div class="mt-8">
-        <template v-for="(step, stepIdx) in steps" :key="stepIdx">
+  <!-- <div class="w-screen bg-white dark:bg-gray-900"> -->
+  <Top />
+  <BlockContainer>
+    <TypographyTitle>Electronics-development</TypographyTitle>
+    <TypographyHeadline
+      content="Efficient Cost Reduction with Customized Supplier Solutions"
+      size="lg"
+    />
+    <h1 class="xl:text-lg pt-2">
+      From idea to finished system – including consultation and design:
+      Everything you need to shape the market of the future with groundbreaking
+      products. We provide the technical expertise to realize your custom
+      electronic solutions. Your vision is the starting point. With us, you gain
+      a technology partner that supports your product throughout its entire
+      lifecycle – even beyond the start of series production. Our expertise
+      spans various industries, including automotive, medical technology,
+      special vehicle construction, industrial communication, and industrial
+      digital printing. At the same time, we are open to new challenges and
+      ready to implement innovative solutions in other areas. Through our
+      comprehensive support from idea to series production, we help you reduce
+      initial development costs and make your product efficient and
+      future-proof."
+    </h1>
+    <div class="mt-8">
+      <template v-for="(step, stepIdx) in steps" :key="stepIdx">
+        <div
+          v-if="viewport.isLessThan('tablet')"
+          v-motion
+          :initial="{
+            opacity: 0,
+            scale: 1,
+            x: 0,
+          }"
+          :visibleOnce="{
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            transition: {
+              duration: 1000,
+            },
+          }"
+          :delay="300"
+          :class="[
+            'relative p-2 sm:p-6 md:flex md:space-x-8 ring-primary/50 ring-1 rounded-panel max-w-fit',
+          ]"
+        >
           <div
-            v-if="viewport.isLessThan('tablet')"
-            v-motion
-            :initial="{
-              opacity: 0,
-              scale: 1,
-              x: 0,
-            }"
-            :visibleOnce="{
-              opacity: 1,
-              x: 0,
-              scale: 1,
-              transition: {
-                duration: 1000,
-              },
-            }"
-            :delay="300"
-            :class="[
-              'relative p-2 sm:p-6 md:flex md:space-x-8 ring-primary/50 ring-1 rounded-panel max-w-fit',
-            ]"
+            v-if="step.image"
+            class="flex flex-col justify-center rounded-panel mx-4"
           >
-            <div
+            <NuxtImg
               v-if="step.image"
-              class="flex flex-col justify-center rounded-panel mx-4"
-            >
-              <NuxtImg
-                v-if="step.image"
-                :class="
-                  step.image === '/electronics/1.png'
-                    ? 'rounded-card w-[218px] h-[182px]'
-                    : 'rounded-card w-[218px] h-[77px]'
-                "
-                :src="step.image"
-              />
-            </div>
-
-            <div class="w-full mt-4 text-left md:mt-0">
-              <TypographyTitle v-if="step"
-                >Step {{ stepIdx + 1 }}</TypographyTitle
-              >
-              <TypographyHeadline
-                v-if="step.title"
-                :content="step.title"
-                size="sm"
-              />
-              <TypographyProse
-                v-if="step.content"
-                :content="step.content"
-                class="mt-4"
-                size="sm"
-              />
-            </div>
-          </div>
-          <div
-            v-else
-            v-motion
-            :initial="{
-              opacity: 0,
-              scale: 1,
-              x: isEven(stepIdx) ? -200 : 200,
-            }"
-            :visibleOnce="{
-              opacity: 1,
-              x: 0,
-              scale: 1,
-              transition: {
-                duration: 1000,
-              },
-            }"
-            :delay="300"
-            :class="[
-              {
-                'mr-8 md:mr-24': isEven(stepIdx),
-                'ml-8 md:ml-24': !isEven(stepIdx),
-              },
-              {
-                'md:flex-row': isEven(stepIdx),
-                'md:flex-row-reverse md:space-x-reverse': !isEven(stepIdx),
-              },
-              'relative p-6 md:flex md:space-x-8 ring-primary/50 ring-1 rounded-panel',
-            ]"
-          >
-            <div
-              v-if="step.image"
-              class="flex flex-col justify-center rounded-panel mx-4"
-            >
-              <NuxtImg
-                v-if="step.image"
-                :class="
-                  step.image === '/electronics/1.png'
-                    ? 'rounded-card w-[218px] h-[182px]'
-                    : 'rounded-card w-[218px] h-[77px]'
-                "
-                :src="step.image"
-              />
-            </div>
-
-            <div class="w-full mt-4 text-left md:mt-0">
-              <TypographyTitle v-if="step"
-                >Step {{ stepIdx + 1 }}</TypographyTitle
-              >
-              <TypographyHeadline
-                v-if="step.title"
-                :content="step.title"
-                size="sm"
-              />
-              <TypographyProse
-                v-if="step.content"
-                :content="step.content"
-                class="mt-4"
-              />
-            </div>
-          </div>
-          <svg
-            v-if="stepIdx !== steps.length - 1"
-            class="h-16 m-0 mx-auto stroke-current text-primary md:h-20 steps-animation"
-            viewBox="0 0 60 200"
-          >
-            <line
-              class="path"
-              x1="15"
-              x2="15"
-              y1="0"
-              y2="200"
-              stroke-width="8"
-              stroke-linecap="square"
+              :class="
+                step.image === '/electronics/1.png'
+                  ? 'rounded-card w-[218px] h-[182px]'
+                  : 'rounded-card w-[218px] h-[77px]'
+              "
+              :src="step.image"
             />
-          </svg>
-        </template>
+          </div>
+
+          <div class="w-full mt-4 text-left md:mt-0">
+            <TypographyTitle v-if="step"
+              >Step {{ stepIdx + 1 }}</TypographyTitle
+            >
+            <TypographyHeadline
+              v-if="step.title"
+              :content="step.title"
+              size="sm"
+            />
+            <TypographyProse
+              v-if="step.content"
+              :content="step.content"
+              class="mt-4"
+              size="sm"
+            />
+          </div>
+        </div>
+        <div
+          v-else
+          v-motion
+          :initial="{
+            opacity: 0,
+            scale: 1,
+            x: isEven(stepIdx) ? -100 : 100,
+          }"
+          :visibleOnce="{
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            transition: {
+              duration: 1000,
+            },
+          }"
+          :delay="300"
+          :class="[
+            {
+              'mr-8 md:mr-24': isEven(stepIdx),
+              'ml-8 md:ml-24': !isEven(stepIdx),
+            },
+            {
+              'md:flex-row': isEven(stepIdx),
+              'md:flex-row-reverse md:space-x-reverse': !isEven(stepIdx),
+            },
+            'relative p-6 md:flex md:space-x-8 ring-primary/50 ring-1 rounded-panel',
+          ]"
+        >
+          <div
+            v-if="step.image"
+            class="flex flex-col justify-center rounded-panel mx-4"
+          >
+            <NuxtImg
+              v-if="step.image"
+              :class="
+                step.image === '/electronics/1.png'
+                  ? 'rounded-card w-[218px] h-[182px]'
+                  : 'rounded-card w-[218px] h-[77px]'
+              "
+              :src="step.image"
+            />
+          </div>
+
+          <div class="w-full mt-4 text-left md:mt-0">
+            <TypographyTitle v-if="step"
+              >Step {{ stepIdx + 1 }}</TypographyTitle
+            >
+            <TypographyHeadline
+              v-if="step.title"
+              :content="step.title"
+              size="sm"
+            />
+            <TypographyProse
+              v-if="step.content"
+              :content="step.content"
+              class="mt-4"
+            />
+          </div>
+        </div>
+        <svg
+          v-if="stepIdx !== steps.length - 1"
+          class="h-16 m-0 mx-auto stroke-current text-primary md:h-20 steps-animation"
+          viewBox="0 0 60 200"
+        >
+          <line
+            class="path"
+            x1="15"
+            x2="15"
+            y1="0"
+            y2="200"
+            stroke-width="8"
+            stroke-linecap="square"
+          />
+        </svg>
+      </template>
+    </div>
+
+    <div
+      class="relative overflow-hidden p-8 text-gray-900 border md:px-10 md:py-8 border-primary/50 rounded-panel mt-10 xl:mt-20"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-white via-gray-300 to-primary dark:from-gray-800 dark:via-gray-900 dark:to-gray-600"
+      ></div>
+      <div class="absolute inset-0 opacity-50 grain-bg dark:opacity-20"></div>
+      <div
+        class="relative md:flex md:items-center md:justify-between md:space-x-4"
+      >
+        <div>
+          <TypographyTitle>Interested?</TypographyTitle>
+          <TypographyHeadline content="Messages" class="font-bold" />
+          <TypographyProse
+            content="We are looking forward to meeting you!"
+            class="mt-2"
+          />
+        </div>
+        <div class="flex-shrink-0 mt-4 md:mt-0">
+          <BlockButtonGroup :data="data" />
+        </div>
       </div>
-    </BlockContainer>
-    <BlockContainer class="!pt-0">
+    </div>
+  </BlockContainer>
+  <!-- <BlockContainer class="!pt-0">
       <div
         class="relative overflow-hidden p-8 text-gray-900 border md:px-10 md:py-8 border-primary/50 rounded-panel"
       >
@@ -233,9 +257,9 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
           </div>
         </div>
       </div>
-    </BlockContainer>
-    <About />
-  </div>
+    </BlockContainer> -->
+  <About />
+  <!-- </div> -->
 </template>
 
 <style>
