@@ -64,6 +64,6 @@ const statusBarThemeIcon = computed(() => {
         }
       }
     "
-    ><UIcon :name="statusBarThemeIcon" class="h-6 w-6 lg:h-8 lg:w-8"></UIcon
+    ><UIcon :name="statusBarThemeIcon" class="h-5 w-5 xl:h-8 xl:w-8"></UIcon
   ></UButton>
 </template>

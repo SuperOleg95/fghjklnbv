@@ -57,6 +57,6 @@ function clickOnLanguage(code: string) {
         }
       }
     "
-    ><UIcon name="i-heroicons-globe-alt" class="h-6 w-6 lg:h-8 lg:w-8"></UIcon
+    ><UIcon name="i-heroicons-globe-alt" class="h-5 w-5 xl:h-8 xl:w-8"></UIcon
   ></UButton>
 </template>

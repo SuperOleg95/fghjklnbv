@@ -94,10 +94,13 @@ const isOpen = ref(false);
 
           <MainMegamenu />
 
-          <div class="space-x-4 pt-2">
+          <div class="space-x-1 pc:space-x-4 pt-2">
             <CommonColorThemeSelector />
             <LangSelector />
-            <UIcon name="i-heroicons-magnifying-glass" class="h-8 w-8"></UIcon>
+            <UIcon
+              name="i-heroicons-magnifying-glass"
+              class="h-5 w-5 xl:h-8 xl:w-8"
+            ></UIcon>
           </div>
         </div>
       </MainContainer>
