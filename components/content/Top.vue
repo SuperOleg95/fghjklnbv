@@ -36,6 +36,8 @@ const links = computed(() => {
   ];
 });
 
+const isSearchOpened = ref(false);
+
 const isOpen = ref(false);
 </script>
 
@@ -48,7 +50,7 @@ const isOpen = ref(false);
           <TypographyHeadline :content="t('schleissheimer')" size="xl" />
           <div class="pt-2 space-x-2">
             <CommonColorThemeSelector />
-            <LangSelector />
+            <CommonLangSelector />
             <UButton
               :padded="false"
               label="Open"
@@ -96,14 +98,20 @@ const isOpen = ref(false);
 
           <div class="space-x-1 pc:space-x-4 pt-2">
             <CommonColorThemeSelector />
-            <LangSelector />
+            <CommonLangSelector />
             <UIcon
               name="i-heroicons-magnifying-glass"
-              class="h-5 w-5 xl:h-8 xl:w-8"
+              :class="[{ invisible: isSearchOpened }]"
+              class="`h-5 w-5 xl:h-8 xl:w-8 isSearchOpened ? 'hidden': 'block'`"
+              @click="isSearchOpened = true"
             ></UIcon>
           </div>
         </div>
       </MainContainer>
+
+      <div v-if="isSearchOpened">
+        <CommonMiniSearch @search:close="isSearchOpened = false" />
+      </div>
     </div>
   </div>
 </template>

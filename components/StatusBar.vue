@@ -83,8 +83,8 @@ const links = [
           </template>
         </UHorizontalNavigation>
         <div class="flex flex-row items-center space-x-2">
-          <ColorThemeSelector />
-          <LangSelector />
+          <CommonColorThemeSelector />
+          <CommonLangSelector />
           <PrimaryColorSelector />
           <UIcon
             name="i-heroicons-cog-6-tooth-solid"

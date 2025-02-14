@@ -22,7 +22,7 @@
         class="relative text-xl lg:text-3xl italic leading-tight text-gray-900 font-display md:leading-tight dark:text-gray-100 md:text-4xl text-wrap-[balance] dark:drop-shadow"
       >
         For over 25 years, we have been helping shape digitization in the
-        automotive industry. Let us help you
+        automotive industry. <br />Let us help you!
       </div>
       <UIcon
         name="i-heroicons-paper-clip"
