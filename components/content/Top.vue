@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { MainNavAbout } from "#components";
+
 const { t } = useI18n();
 const viewport = useViewport();
 
@@ -37,6 +39,10 @@ const links = computed(() => {
 });
 
 const isSearchOpened = ref(false);
+const isAboutOpened = ref(false);
+const isSoftwareOpened = ref(false);
+const isEngineeringOpened = ref(false);
+const isProductsOpened = ref(false);
 
 const isOpen = ref(false);
 </script>
@@ -82,7 +88,18 @@ const isOpen = ref(false);
       </MainContainer>
     </div>
     <!-- Tablet window -->
-    <div v-else>
+    <div
+      v-else
+      @mouseleave="
+        () => {
+          isAboutOpened = false;
+          isSearchOpened = false;
+          isSoftwareOpened = false;
+          isEngineeringOpened = false;
+          isProductsOpened = false;
+        }
+      "
+    >
       <MainContainer>
         <div class="flex justify-between p-2">
           <div class="flex">
@@ -94,7 +111,44 @@ const isOpen = ref(false);
             />
           </div>
 
-          <MainMegamenu />
+          <MainMegamenu
+            @nav:about:open="
+              () => {
+                isAboutOpened = true;
+                isSearchOpened = false;
+                isSoftwareOpened = false;
+                isEngineeringOpened = false;
+                isProductsOpened = false;
+              }
+            "
+            @nav:software:open="
+              () => {
+                isSoftwareOpened = true;
+                isAboutOpened = false;
+                isSearchOpened = false;
+                isEngineeringOpened = false;
+                isProductsOpened = false;
+              }
+            "
+            @nav:engineering:open="
+              () => {
+                isSoftwareOpened = false;
+                isAboutOpened = false;
+                isSearchOpened = false;
+                isEngineeringOpened = true;
+                isProductsOpened = false;
+              }
+            "
+            @nav:products:open="
+              () => {
+                isSoftwareOpened = false;
+                isAboutOpened = false;
+                isSearchOpened = false;
+                isEngineeringOpened = false;
+                isProductsOpened = true;
+              }
+            "
+          />
 
           <div class="space-x-1 pc:space-x-4 pt-2">
             <CommonColorThemeSelector />
@@ -103,7 +157,15 @@ const isOpen = ref(false);
               name="i-heroicons-magnifying-glass"
               :class="[{ invisible: isSearchOpened }]"
               class="`h-5 w-5 xl:h-8 xl:w-8 isSearchOpened ? 'hidden': 'block'`"
-              @click="isSearchOpened = true"
+              @mouseover="
+                () => {
+                  isSearchOpened = true;
+                  isAboutOpened = false;
+                  isSoftwareOpened = false;
+                  isEngineeringOpened = false;
+                  isProductsOpened = false;
+                }
+              "
             ></UIcon>
           </div>
         </div>
@@ -111,6 +173,18 @@ const isOpen = ref(false);
 
       <div v-if="isSearchOpened">
         <CommonMiniSearch @search:close="isSearchOpened = false" />
+      </div>
+      <div v-else-if="isAboutOpened">
+        <MainNavAbout />
+      </div>
+      <div v-else-if="isSoftwareOpened">
+        <MainNavSoftware />
+      </div>
+      <div v-else-if="isEngineeringOpened">
+        <MainNavEngineering />
+      </div>
+      <div v-else-if="isProductsOpened">
+        <MainNavProducts />
       </div>
     </div>
   </div>
