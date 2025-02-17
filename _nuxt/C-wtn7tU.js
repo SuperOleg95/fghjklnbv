@@ -1,0 +1,1 @@
+import{d as a,c as s,G as t,w as o,H as r,I as n}from"./Bx2Bf-Cu.js";const l=a({__name:"Title",props:{as:{default:"h2"}},setup(p){return(e,c)=>(s(),t(n(e.as),{class:"font-medium tracking-wider uppercase font-display text-primary"},{default:o(()=>[r(e.$slots,"default")]),_:3}))}});export{l as _};
