@@ -3,7 +3,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="w-full flex bg-white dark:bg-gray-900 justify-center">
+  <div class="w-full bg-white dark:bg-gray-900 justify-center">
     <div class="w-[1280px] bg-white dark:bg-gray-900 p-8">
       <div class="flex justify-evenly gap-8 max-w-[1280px]">
         <div class="flex flex-col w-[40%] justify-center gap-4">

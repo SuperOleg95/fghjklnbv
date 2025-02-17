@@ -38,13 +38,68 @@ const links = computed(() => {
   ];
 });
 
-const isSearchOpened = ref(false);
 const isAboutOpened = ref(false);
 const isSoftwareOpened = ref(false);
 const isEngineeringOpened = ref(false);
 const isProductsOpened = ref(false);
+const isSearchOpened = ref(false);
 
 const isOpen = ref(false);
+
+enum megaMenu {
+  Search = "Search",
+  About = "About",
+  Software = "Software",
+  Engineering = "Engineering",
+  Products = "Products",
+  Closed = "Closed",
+}
+
+function megaMenuDispatch(item: megaMenu) {
+  let refList = [
+    isAboutOpened,
+    isSoftwareOpened,
+    isEngineeringOpened,
+    isProductsOpened,
+    isSearchOpened,
+  ];
+  let refListCopy: globalThis.Ref<boolean, boolean>[] = refList;
+
+  switch (item) {
+    case megaMenu.About:
+      refListCopy.splice(refListCopy.indexOf(isAboutOpened), 1);
+      isAboutOpened.value = true;
+      break;
+
+    case megaMenu.Software:
+      refListCopy.splice(refListCopy.indexOf(isSoftwareOpened), 1);
+      isSoftwareOpened.value = true;
+      break;
+
+    case megaMenu.Engineering:
+      refListCopy.splice(refListCopy.indexOf(isEngineeringOpened), 1);
+      isEngineeringOpened.value = true;
+      break;
+
+    case megaMenu.Products:
+      refListCopy.splice(refListCopy.indexOf(isProductsOpened), 1);
+      isProductsOpened.value = true;
+      break;
+
+    case megaMenu.Search:
+      refListCopy.splice(refListCopy.indexOf(isSearchOpened), 1);
+      isSearchOpened.value = true;
+      break;
+
+    case megaMenu.Closed:
+      // close all
+      break;
+  }
+
+  for (let ref of refListCopy) {
+    ref.value = false;
+  }
+}
 </script>
 
 <template>
@@ -88,18 +143,7 @@ const isOpen = ref(false);
       </MainContainer>
     </div>
     <!-- Tablet window -->
-    <div
-      v-else
-      @mouseleave="
-        () => {
-          isAboutOpened = false;
-          isSearchOpened = false;
-          isSoftwareOpened = false;
-          isEngineeringOpened = false;
-          isProductsOpened = false;
-        }
-      "
-    >
+    <div v-else @mouseleave="megaMenuDispatch(megaMenu.Closed)">
       <MainContainer>
         <div class="flex justify-between p-2">
           <div class="flex">
@@ -111,44 +155,54 @@ const isOpen = ref(false);
             />
           </div>
 
-          <MainMegamenu
-            @nav:about:open="
-              () => {
-                isAboutOpened = true;
-                isSearchOpened = false;
-                isSoftwareOpened = false;
-                isEngineeringOpened = false;
-                isProductsOpened = false;
-              }
-            "
-            @nav:software:open="
-              () => {
-                isSoftwareOpened = true;
-                isAboutOpened = false;
-                isSearchOpened = false;
-                isEngineeringOpened = false;
-                isProductsOpened = false;
-              }
-            "
-            @nav:engineering:open="
-              () => {
-                isSoftwareOpened = false;
-                isAboutOpened = false;
-                isSearchOpened = false;
-                isEngineeringOpened = true;
-                isProductsOpened = false;
-              }
-            "
-            @nav:products:open="
-              () => {
-                isSoftwareOpened = false;
-                isAboutOpened = false;
-                isSearchOpened = false;
-                isEngineeringOpened = false;
-                isProductsOpened = true;
-              }
-            "
-          />
+          <nav
+            class="flex bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900"
+          >
+            <UButton
+              color="white"
+              :label="t('aboutUs')"
+              icon="i-heroicons-briefcase"
+              variant="ghost"
+              class="opacity-60 hover:opacity-100"
+              size="xl"
+              @mouseover="megaMenuDispatch(megaMenu.About)"
+            />
+            <UButton
+              color="white"
+              :label="t('software')"
+              icon="i-heroicons-code-bracket"
+              variant="ghost"
+              class="opacity-60 hover:opacity-100"
+              size="xl"
+              @mouseover="megaMenuDispatch(megaMenu.Software)"
+            />
+            <UButton
+              color="white"
+              :label="t('engineering')"
+              icon="i-heroicons-cog-8-tooth"
+              variant="ghost"
+              class="opacity-60 hover:opacity-100"
+              size="xl"
+              @mouseover="megaMenuDispatch(megaMenu.Engineering)"
+            ></UButton>
+            <UButton
+              color="white"
+              :label="t('products')"
+              icon="i-heroicons-sparkles"
+              variant="ghost"
+              class="opacity-60 hover:opacity-100"
+              size="xl"
+              @mouseover="megaMenuDispatch(megaMenu.Products)"
+            ></UButton>
+            <UButton
+              color="white"
+              :label="t('career')"
+              icon="i-heroicons-presentation-chart-line"
+              variant="ghost"
+              class="opacity-60 hover:opacity-100"
+              size="xl"
+            ></UButton>
+          </nav>
 
           <div class="space-x-1 pc:space-x-4 pt-2">
             <CommonColorThemeSelector />
@@ -156,16 +210,8 @@ const isOpen = ref(false);
             <UIcon
               name="i-heroicons-magnifying-glass"
               :class="[{ invisible: isSearchOpened }]"
-              class="`h-5 w-5 xl:h-8 xl:w-8 isSearchOpened ? 'hidden': 'block'`"
-              @mouseover="
-                () => {
-                  isSearchOpened = true;
-                  isAboutOpened = false;
-                  isSoftwareOpened = false;
-                  isEngineeringOpened = false;
-                  isProductsOpened = false;
-                }
-              "
+              class="h-5 w-5 xl:h-8 xl:w-8"
+              @mouseover="megaMenuDispatch(megaMenu.Search)"
             ></UIcon>
           </div>
         </div>
