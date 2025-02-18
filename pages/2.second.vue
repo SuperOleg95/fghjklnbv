@@ -38,7 +38,7 @@ let duration = "10s";
           ref="leftCol"
           :class="[
             { 'animate-marquee': true },
-            'space-y-10 py-4 -mt-10 md:max-w-[320px] ',
+            'space-y-10 py-4 mt-[200px] md:max-w-[320px] ',
           ]"
           :style="{
             '--marquee-duration': duration,
@@ -70,7 +70,7 @@ let duration = "10s";
 
 <style>
 .animate-marquee {
-  animation: marquee var(--marquee-duration) linear infinite;
+  animation: marquee var(--marquee-duration) linear infinite forwards;
   &:hover {
     animation-play-state: paused;
   }
@@ -80,11 +80,8 @@ let duration = "10s";
   0% {
     transform: translateY(0);
   }
-  95% {
-    transform: translateY(calc(-50%));
-  }
   100% {
-    transform: translateY(0);
+    transform: translateY(calc(-50%));
   }
 }
 </style>

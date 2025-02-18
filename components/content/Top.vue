@@ -118,7 +118,7 @@ function megaMenuDispatch(item: megaMenu) {
               @click="isOpen = true"
               variant="ghost"
               class="text-black dark:text-white"
-              ><UIcon name="i-heroicons-bars-3" class="h-6 w-6"></UIcon
+              ><UIcon name="i-heroicons-bars-3" class="h-5 w-5"></UIcon
             ></UButton>
           </div>
         </div>
@@ -137,6 +137,7 @@ function megaMenuDispatch(item: megaMenu) {
             />
             <div class="pt-20">
               <UVerticalNavigation :links="links" />
+              <CommonMiniSearch />
             </div>
           </div>
         </USlideover>
