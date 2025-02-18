@@ -3,12 +3,12 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="w-full bg-white dark:bg-gray-900 justify-center">
+  <div class="w-full bg-white dark:bg-gray-900 flex justify-center">
     <div class="w-[1280px] bg-white dark:bg-gray-900 p-8">
       <div class="flex justify-evenly gap-8 max-w-[1280px]">
         <div class="flex flex-col w-[40%] justify-center gap-4">
           <h1 class="text-4xl text-left font-bold">About us</h1>
-          <h1 class="text-xl text-left">our corporate slogan</h1>
+          <h1 class="text-xl text-left">Our corporate slogan here</h1>
           <UButton variant="outline" class="text-left w-fit" size="xl"
             >Overview</UButton
           >

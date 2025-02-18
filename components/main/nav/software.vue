@@ -26,7 +26,12 @@ const { t } = useI18n();
         </div>
       </div>
       <div class="flex flex-col w-[25%] justify-center">
-        <img src="/main/sw.jpg" class="max-h-40 object-contain" />
+        <MainCardSmall
+          heading=""
+          description="Software product or event"
+          color="blue"
+          link="#"
+        />
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@
         opacity: 1,
         y: 0,
         transition: {
-          delay: 500,
+          delay: 750,
         },
       }"
       class="relative"
