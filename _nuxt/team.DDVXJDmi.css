@@ -1,0 +1,1 @@
+.animate-marquee{animation:marquee var(--marquee-duration) linear infinite forwards}.animate-marquee:hover{animation-play-state:paused}@keyframes marquee{0%{transform:translateY(0)}to{transform:translateY(-180%)}}
