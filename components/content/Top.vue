@@ -218,20 +218,23 @@ function megaMenuDispatch(item: megaMenu) {
         </div>
       </MainContainer>
 
-      <div v-if="isSearchOpened">
-        <CommonMiniSearch @search:close="isSearchOpened = false" />
-      </div>
-      <div v-else-if="isAboutOpened">
+      <div v-if="isAboutOpened" class="absolute top-18 z-10 w-screen">
         <MainNavAbout />
       </div>
-      <div v-else-if="isSoftwareOpened">
+      <div v-else-if="isSoftwareOpened" class="absolute top-18 z-10 w-screen">
         <MainNavSoftware />
       </div>
-      <div v-else-if="isEngineeringOpened">
+      <div
+        v-else-if="isEngineeringOpened"
+        class="absolute top-18 z-10 w-screen"
+      >
         <MainNavEngineering />
       </div>
-      <div v-else-if="isProductsOpened">
+      <div v-else-if="isProductsOpened" class="absolute top-18 z-10 w-screen">
         <MainNavProducts />
+      </div>
+      <div v-else-if="isSearchOpened" class="absolute top-18 z-10 w-screen">
+        <CommonMiniSearch @search:close="isSearchOpened = false" />
       </div>
     </div>
   </div>
