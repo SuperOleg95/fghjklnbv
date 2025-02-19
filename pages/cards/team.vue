@@ -113,59 +113,107 @@ let personsRight = [
 
 let duration_slow = "40s";
 let duration_fast = "20s";
+
+const viewport = useViewport();
+
+watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
+  console.log("Breakpoint updated:", oldBreakpoint, "->", newBreakpoint);
+});
 </script>
 
 <template>
-  <div class="bg-white dark:bg-gray-900 space-y-5// flex flex-col w-full">
-    <Top />
-    <BlockContainer>
-      <div class="flex flex-col mx-auto lg:flex-row">
-        <!-- Text -->
-        <div class="flex flex-col pr-4 lg:w-3/5">
-          <TypographyTitle>Our team!</TypographyTitle>
-          <TypographyHeadline content="We are your contact persons" size="lg" />
-          <TypographyProse content="Some text here" class="mt-4" />
-        </div>
+  <div>
+    <!-- Should render only on mobile -->
+    <div v-if="viewport.isLessThan('tablet')">
+      <div class="bg-white dark:bg-gray-900 space-y-5// flex flex-col w-full">
+        <Top />
+        <BlockContainer>
+          <div class="flex flex-col mx-auto lg:flex-row">
+            <!-- Text -->
+            <div class="flex flex-col pr-4 lg:w-3/5">
+              <TypographyTitle>Our team!</TypographyTitle>
+              <TypographyHeadline
+                content="We are your contact persons"
+                size="lg"
+              />
+              <TypographyProse content="Some text here" class="mt-4" />
 
-        <!-- Team -->
-        <div
-          ref="target"
-          class="w-full relative grid h-[35rem] max-h-[60vh] grid-cols-1 items-start gap-8 overflow-hidden px-4 md:grid-cols-2 border-t-4 border-t-primary border-b-4 border-b-gray-500 mt-8 lg:mt-0"
-        >
-          <!-- Left Col -->
-          <div
-            ref="leftCol"
-            :class="[
-              { 'animate-marquee': true },
-              'space-y-10 py-4 mt-[530px] md:max-w-[320px] ',
-            ]"
-            :style="{
-              '--marquee-duration': duration_slow,
-            }"
-          >
-            <div v-for="person in personsLeft">
-              <TeamCard :person="person" />
+              <div
+                v-for="person in personsLeft"
+                class="py-2 flex justify-center"
+              >
+                <TeamCard :person="person" />
+              </div>
+
+              <div
+                v-for="person in personsRight"
+                class="py-2 flex justify-center"
+              >
+                <TeamCard :person="person" />
+              </div>
             </div>
           </div>
-          <!-- Right Col -->
-          <div
-            ref="rightCol"
-            :class="[
-              { 'animate-marquee': true },
-              'space-y-10 py-4 mt-[530px] md:max-w-[320px]',
-            ]"
-            :style="{
-              '--marquee-duration': duration_fast,
-            }"
-          >
-            <div v-for="person in personsRight">
-              <TeamCard :person="person" />
-            </div>
-          </div>
-        </div>
+        </BlockContainer>
+        <About />
       </div>
-    </BlockContainer>
-    <About />
+    </div>
+    <!-- Tablet window -->
+    <div v-else>
+      <div class="bg-white dark:bg-gray-900 space-y-5// flex flex-col w-full">
+        <Top />
+        <BlockContainer>
+          <div class="flex flex-col mx-auto lg:flex-row">
+            <!-- Text -->
+            <div class="flex flex-col pr-4 lg:w-3/5">
+              <TypographyTitle>Our team!</TypographyTitle>
+              <TypographyHeadline
+                content="We are your contact persons"
+                size="lg"
+              />
+              <TypographyProse content="Some text here" class="mt-4" />
+            </div>
+
+            <!-- Team -->
+            <div
+              ref="target"
+              class="w-full relative grid h-[35rem] max-h-[60vh] grid-cols-1 items-start gap-8 overflow-hidden px-4 md:grid-cols-2 border-t-4 border-t-primary border-b-4 border-b-gray-500 mt-8 lg:mt-0"
+            >
+              <!-- Left Col -->
+              <div
+                ref="leftCol"
+                :class="[
+                  { 'animate-marquee': true },
+                  'space-y-10 py-4 mt-[530px] md:max-w-[320px] ',
+                ]"
+                :style="{
+                  '--marquee-duration': duration_slow,
+                }"
+              >
+                <div v-for="person in personsLeft">
+                  <TeamCard :person="person" />
+                </div>
+              </div>
+              <!-- Right Col -->
+              <div
+                ref="rightCol"
+                :class="[
+                  { 'animate-marquee': true },
+                  'space-y-10 py-4 mt-[530px] md:max-w-[320px]',
+                ]"
+                :style="{
+                  '--marquee-duration': duration_fast,
+                }"
+              >
+                <div v-for="person in personsRight">
+                  <TeamCard :person="person" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </BlockContainer>
+        <About />
+      </div>
+    </div>
   </div>
 </template>
 

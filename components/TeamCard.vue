@@ -20,7 +20,9 @@ const flipped = ref(false);
         :src="props.person.image"
       /> -->
 
-      <div class="w-[400px] h-[300px] bg-primary"></div>
+      <div
+        class="w-[300px] h-[230px] xl:w-[400px] xl:h-[300px] bg-primary/80"
+      ></div>
 
       <!-- Back of Team Card -->
       <Motionable
