@@ -1,0 +1,1 @@
+import{j as s,c as t,e as c,f as o,N as n}from"./fLOSmorp.js";const a={},r={class:"flex justify-center px-2 md:px-0"},l={class:"w-[700px] sm:w-[850px] lg:w-[1000px] xl:w-[1280px]"};function _(e,d){return t(),c("div",r,[o("div",l,[n(e.$slots,"default")])])}const p=s(a,[["render",_]]);export{p as M};
