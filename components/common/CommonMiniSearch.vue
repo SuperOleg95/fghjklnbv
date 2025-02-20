@@ -37,7 +37,7 @@ const result = computed(() => miniSearch.search(toValue(query)));
       <UButton variant="ghost" @click="emit('search:close')">
         <UIcon
           name="i-heroicons-x-mark-20-solid"
-          class="text-white h-5 w-5 xl:h-6 xl:w-6"
+          class="h-5 w-5 xl:h-6 xl:w-6"
         ></UIcon
       ></UButton>
     </div>

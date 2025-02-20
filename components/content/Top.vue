@@ -233,7 +233,10 @@ function megaMenuDispatch(item: megaMenu) {
       <div v-else-if="isProductsOpened" class="absolute top-18 z-10 w-screen">
         <MainNavProducts />
       </div>
-      <div v-else-if="isSearchOpened" class="absolute top-18 z-10 w-screen">
+      <div
+        v-else-if="isSearchOpened"
+        class="absolute top-18 z-10 w-screen bg-white dark:bg-gray-900"
+      >
         <CommonMiniSearch @search:close="isSearchOpened = false" />
       </div>
     </div>
