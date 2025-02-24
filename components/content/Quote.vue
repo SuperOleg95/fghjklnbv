@@ -21,11 +21,11 @@ const { data: quote } = await useAsyncData("quote", () => {
       }"
       class="relative"
     >
-      <TypographyTitle>{{ quote?.description }}</TypographyTitle>
+      <TypographyTitle>{{ quote?.title }}</TypographyTitle>
       <div
         class="relative text-xl lg:text-3xl italic leading-tight text-gray-900 font-display md:leading-tight dark:text-gray-100 md:text-4xl text-wrap-[balance] dark:drop-shadow"
       >
-        <ContentRenderer v-if="quote" :value="quote" />
+        <div>{{ quote?.description }}</div>
         <!-- For over 25 years, we have been helping shape digitization in the
         automotive industry. <br />Let us help you! -->
       </div>
