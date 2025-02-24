@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const { data: quote } = await useAsyncData("quote", () => {
+  return queryCollection("quote").first();
+});
+</script>
+
 <template>
   <MainContainer>
     <div
@@ -15,14 +21,13 @@
       }"
       class="relative"
     >
-      <TypographyTitle
-        >We are the technology partner for innovative companies</TypographyTitle
-      >
+      <TypographyTitle>{{ quote?.description }}</TypographyTitle>
       <div
         class="relative text-xl lg:text-3xl italic leading-tight text-gray-900 font-display md:leading-tight dark:text-gray-100 md:text-4xl text-wrap-[balance] dark:drop-shadow"
       >
-        For over 25 years, we have been helping shape digitization in the
-        automotive industry. <br />Let us help you!
+        <ContentRenderer v-if="quote" :value="quote" />
+        <!-- For over 25 years, we have been helping shape digitization in the
+        automotive industry. <br />Let us help you! -->
       </div>
       <UIcon
         name="i-heroicons-paper-clip"
@@ -33,8 +38,8 @@
     <div
       class="w-full mt-4 text-sm font-semibold tracking-wider uppercase word-spacing-tight lg:text-lg font-display"
     >
-      <p class="text-primary">John Doe</p>
-      <p class="dark:text-white">SEO</p>
+      <p class="text-primary">{{ quote?.meta.name }}</p>
+      <p class="dark:text-white">{{ quote?.meta.position }}</p>
     </div>
   </MainContainer>
 </template>
