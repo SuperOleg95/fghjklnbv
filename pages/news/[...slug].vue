@@ -30,9 +30,11 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
       <BackBtn />
     </div>
     <div v-else>
-      <div class="h-screen flex flex-col justify-between">
+      <div
+        class="h-screen flex flex-col justify-between bg-white dark:bg-gray-900"
+      >
         <Top />
-        <div class="flex bg-white dark:bg-gray-900 p-4 space-y-2">
+        <div class="flex p-4 space-y-2">
           <div class="flex flex-col grow justify-center">
             <MainContainer>
               <div class="text-3xl font-bold text-center">

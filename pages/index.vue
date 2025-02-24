@@ -8,11 +8,9 @@ const { data: page } = await useAsyncData("page", () => {
   <div
     class="bg-white dark:bg-gray-900 space-y-5 xl:space-y-10 // flex flex-col w-full"
   >
-    <!-- <ContentRenderer v-if="page" :value="page" /> -->
-    <!-- 
-    <div class="w-screen h-10 bg-black"></div> -->
+    <ContentRenderer v-if="page" :value="page" class="space-y-10" />
 
-    <Top />
+    <!-- <Top />
 
     <Swiper />
 
@@ -28,6 +26,6 @@ const { data: page } = await useAsyncData("page", () => {
 
     <About />
 
-    <ScrollTop />
+    <ScrollTop /> -->
   </div>
 </template>
