@@ -1,4 +1,15 @@
+@import "tailwindcss" theme(static);
+@import "@nuxt/ui";
+
 .localcssfont {
   font-weight: 400;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+:root {
+}
+
+.dark {
+  /* Main background color */
+  --ui-bg: var(--ui-color-neutral-900);
 }

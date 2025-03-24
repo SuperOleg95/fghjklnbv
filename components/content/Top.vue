@@ -136,7 +136,7 @@ function megaMenuDispatch(item: megaMenu) {
               @click="isOpen = false"
             />
             <div class="pt-20">
-              <UVerticalNavigation :links="links" />
+              <!-- <UVerticalNavigation :links="links" /> -->
               <CommonMiniSearch />
             </div>
           </div>

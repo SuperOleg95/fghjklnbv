@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: false },
+  css: ["~/assets/css/main.css"],
 
   modules: [
     "@nuxtjs/i18n",

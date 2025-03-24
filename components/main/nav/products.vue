@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import type { _padding } from "#tailwind-config/theme";
 const { t } = useI18n();
 </script>
 
 <template>
-  <div class="w-full flex justify-center bg-white dark:bg-gray-900 p-8">
+  <div class="w-full flex justify-center bg-(--ui-bg-muted) p-8">
     <div class="flex justify-evenly gap-8 w-[1180px]">
       <div class="flex flex-col w-[50%] justify-center gap-4">
         <h1 class="text-4xl text-left font-bold">Products</h1>
