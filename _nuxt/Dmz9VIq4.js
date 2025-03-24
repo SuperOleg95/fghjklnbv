@@ -1,1 +1,0 @@
-import{d as a,C as s,i as t,w as o,H as r,a2 as n}from"./CviWRkU7.js";const c=a({__name:"Title",props:{as:{default:"h2"}},setup(p){return(e,i)=>(t(),s(n(e.as),{class:"font-medium tracking-wider uppercase font-display text-primary"},{default:o(()=>[r(e.$slots,"default")]),_:3}))}});export{c as _};
