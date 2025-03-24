@@ -1,13 +1,9 @@
 import type { Config } from "tailwindcss";
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-export default {
-  content: [],
-  theme: {
-    screens: {
-      pagShrink: { max: "1100px" },
-      ...defaultTheme.screens,
-    },
-  },
+// Default are on https://tailwindcss.nuxtjs.org/tailwind/config#default-configuration
+export default <Partial<Config>>{
+  theme: {},
   plugins: [],
-} satisfies Config;
+  content: [],
+};
