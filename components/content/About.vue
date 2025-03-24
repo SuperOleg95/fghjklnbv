@@ -17,20 +17,20 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
               <h5 class="text-base text-primary">Solutions</h5>
               <NuxtLink to="#" class="flex"
                 >Electronics Development
-                <Icon name="mdi:chevron-right" class="mt-1"></Icon
+                <UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
               ></NuxtLink>
               <NuxtLink to="#" class="flex"
                 >Software Engineering
-                <Icon name="mdi:chevron-right" class="mt-1"></Icon
+                <UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
               ></NuxtLink>
 
               <h5 class="text-base text-primary">Follow us</h5>
               <div class="flex">
                 <NuxtLink to="#" class="flex">
-                  <Icon name="mdi:linkedin" class="text-3xl"></Icon
+                  <UIcon name="i-mdi-linkedin" class="text-3xl"></UIcon
                 ></NuxtLink>
                 <NuxtLink to="#" class="flex"
-                  ><Icon name="mdi:xing" class="text-3xl"></Icon
+                  ><UIcon name="i-mdi-xing" class="text-3xl"></UIcon
                 ></NuxtLink>
               </div>
             </div>
@@ -39,16 +39,19 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
           <div class="flex flex-col gap-2">
             <h5 class="text-base text-primary">About us</h5>
             <NuxtLink to="#" class="flex -mt-3"
-              >Company <Icon name="mdi:chevron-right" class="mt-1"></Icon
+              >Company <UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
             ></NuxtLink>
             <NuxtLink to="#" class="flex"
-              >Competencies<Icon name="mdi:chevron-right" class="mt-1"></Icon
+              >Competencies<UIcon
+                name="i-mdi-chevron-right"
+                class="mt-1"
+              ></UIcon
             ></NuxtLink>
             <NuxtLink to="#" class="flex"
-              >Philosophy<Icon name="mdi:chevron-right" class="mt-1"></Icon
+              >Philosophy<UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
             ></NuxtLink>
             <NuxtLink to="#" class="flex"
-              >Contact<Icon name="mdi:chevron-right" class="mt-1"></Icon
+              >Contact<UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
             ></NuxtLink>
           </div>
         </div>
@@ -86,26 +89,26 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
           <h5 class="text-lg text-primary">Solutions</h5>
           <NuxtLink to="#" class="flex -mt-3"
             >Electronics Development
-            <Icon name="mdi:chevron-right" class="mt-1"></Icon
+            <UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
           ></NuxtLink>
           <NuxtLink to="#" class="flex"
             >Software Engineering
-            <Icon name="mdi:chevron-right" class="mt-1"></Icon
+            <UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
           ></NuxtLink>
         </div>
         <div class="flex flex-col gap-3">
           <h5 class="text-lg text-primary">About us</h5>
           <NuxtLink to="#" class="flex -mt-3"
-            >Company <Icon name="mdi:chevron-right" class="mt-1"></Icon
+            >Company <UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
           ></NuxtLink>
           <NuxtLink to="#" class="flex"
-            >Competencies<Icon name="mdi:chevron-right" class="mt-1"></Icon
+            >Competencies<UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
           ></NuxtLink>
           <NuxtLink to="#" class="flex"
-            >Philosophy<Icon name="mdi:chevron-right" class="mt-1"></Icon
+            >Philosophy<UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
           ></NuxtLink>
           <NuxtLink to="#" class="flex"
-            >Contact<Icon name="mdi:chevron-right" class="mt-1"></Icon
+            >Contact<UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
           ></NuxtLink>
         </div>
 
@@ -138,10 +141,10 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
           <h5 class="text-lg text-primary">Follow us</h5>
           <div class="flex">
             <NuxtLink to="#" class="flex">
-              <Icon name="mdi:linkedin" class="text-3xl"></Icon
+              <UIcon name="i-mdi-linkedin" class="text-3xl h-5 w-5"></UIcon
             ></NuxtLink>
             <NuxtLink to="#" class="flex"
-              ><Icon name="mdi:xing" class="text-3xl"></Icon
+              ><UIcon name="i-mdi-xing" class="text-3xl"></UIcon
             ></NuxtLink>
           </div>
         </div>

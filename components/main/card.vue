@@ -16,7 +16,7 @@ const props = defineProps({
       <div class="pt-14 p-4 text-3xl">
         <div class="flex">
           <h5>{{ props.heading }}</h5>
-          <Icon name="mdi:chevron-right" class="mt-1"></Icon>
+          <UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon>
         </div>
         <h5 class="text-lg">{{ props.description }}</h5>
       </div>

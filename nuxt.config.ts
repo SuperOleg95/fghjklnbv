@@ -14,21 +14,9 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@vueuse/motion/nuxt",
     "@vueuse/nuxt",
-    "@nuxt/icon",
     "@nuxt/content",
     "nuxt-viewport",
   ],
-
-  icon: {
-    componentName: "NuxtIcon",
-    serverBundle: {
-      collections: ["mdi"], // <!--- this
-    },
-  },
-
-  tailwindcss: {
-    quiet: true,
-  },
 
   i18n: {
     defaultLocale: "en-US",
