@@ -100,6 +100,107 @@ function megaMenuDispatch(item: megaMenu) {
     ref.value = false;
   }
 }
+
+const items = ref([
+  {
+    label: t("aboutUs"),
+    icon: "i-lucide-book-open",
+    to: "/getting-started",
+    children: [
+      {
+        label: "Company",
+        description: "Fully styled and customizable components for Nuxt.",
+        icon: "i-lucide-house",
+      },
+      {
+        label: "Partner",
+        description:
+          "Learn how to install and configure Nuxt UI in your application.",
+        icon: "i-mdi-account-group",
+      },
+      {
+        label: "Philosphy",
+        icon: "i-lucide-smile",
+        description:
+          "You have nothing to do, @nuxt/icon will handle it automatically.",
+      },
+      {
+        label: "Competencies",
+        icon: "i-lucide-swatch-book",
+        description:
+          "Choose a primary and a neutral color from your Tailwind CSS theme.",
+      },
+      {
+        label: "Compliance",
+        icon: "i-lucide-cog",
+        description:
+          "You can customize components by using the `class` / `ui` props or in your app.config.ts.",
+      },
+    ],
+  },
+  {
+    label: t("software"),
+    icon: "i-lucide-database",
+    to: "/composables",
+    children: [
+      {
+        label: "Automotive Software-Engineering",
+        icon: "i-lucide-file-text",
+        description: "Define shortcuts for your application.",
+        to: "/composables/define-shortcuts",
+      },
+      {
+        label: "Medical System & Software Engineering",
+        icon: "i-lucide-file-text",
+        description: "Display a modal/slideover within your application.",
+        to: "/composables/use-overlay",
+      },
+      {
+        label: "Cyber Security",
+        icon: "i-lucide-file-text",
+        description: "Display a toast within your application.",
+        to: "/composables/use-toast",
+      },
+    ],
+  },
+  {
+    label: t("engineering"),
+    icon: "i-lucide-box",
+    to: "/components",
+    active: true,
+    children: [
+      {
+        label: "Efficient Cost Reduction with Customized Supplier Solutions",
+        icon: "i-lucide-file-text",
+        description: "Use NuxtLink with superpowers.",
+        to: "/components/link",
+      },
+      {
+        label: "Measuring and Test Equipment",
+        icon: "i-lucide-file-text",
+        description: "Display a modal within your application.",
+        to: "/components/modal",
+      },
+      {
+        label: "Micro HiL Cluster",
+        icon: "i-lucide-file-text",
+        description: "Display a list of links.",
+        to: "/components/navigation-menu",
+      },
+    ],
+  },
+  {
+    label: "Products",
+    icon: "i-heroicons-bars-3",
+    to: "#",
+  },
+  {
+    label: "Career",
+    icon: "i-heroicons-globe-europe-africa",
+    badge: "10",
+    to: "#",
+  },
+]);
 </script>
 
 <template>
@@ -112,100 +213,100 @@ function megaMenuDispatch(item: megaMenu) {
           <div class="pt-2 space-x-2">
             <CommonColorThemeSelector />
             <CommonLangSelector />
-            <UButton
-              :padded="false"
-              label="Open"
-              @click="isOpen = true"
-              variant="ghost"
-              class="text-black dark:text-white"
-              ><UIcon name="i-heroicons-bars-3" class="h-5 w-5"></UIcon
-            ></UButton>
+
+            <USlideover
+              v-model="isOpen"
+              title="Menu"
+              close-icon="i-lucide-arrow-right"
+            >
+              <UButton
+                :padded="false"
+                label="Open"
+                @click="isOpen = true"
+                variant="ghost"
+                class="text-black dark:text-white"
+                ><UIcon name="i-heroicons-bars-3" class="h-5 w-5"></UIcon
+              ></UButton>
+              <template #body>
+                <div class="p-4 flex-1">
+                  <UNavigationMenu orientation="vertical" :items="items" />
+                  <CommonMiniSearch />
+                </div>
+              </template>
+            </USlideover>
           </div>
         </div>
-
-        <USlideover v-model="isOpen">
-          <div class="p-4 flex-1">
-            <UButton
-              color="gray"
-              variant="ghost"
-              size="sm"
-              icon="i-heroicons-x-mark-20-solid"
-              class="flex sm:hidden absolute end-5 top-5 z-10"
-              square
-              padded
-              @click="isOpen = false"
-            />
-            <div class="pt-20">
-              <!-- <UVerticalNavigation :links="links" /> -->
-              <CommonMiniSearch />
-            </div>
-          </div>
-        </USlideover>
       </MainContainer>
     </div>
     <!-- Tablet window -->
-    <div v-else @mouseleave="megaMenuDispatch(megaMenu.Closed)">
-      <MainContainer>
+    <div
+      v-else-if="viewport.isLessThan('desktop')"
+      @mouseleave="megaMenuDispatch(megaMenu.Closed)"
+    >
+      <MainContainer class="border-b-1 border-(--ui-border-muted)">
         <div class="flex justify-between p-2">
           <div class="flex">
             <NuxtImg src="/logo.png" class="object-contain h-10" />
             <TypographyHeadline
               :content="t('schleissheimer')"
-              size="xl"
+              size="lg"
               class="hidden xl:block"
             />
           </div>
 
-          <nav
-            class="flex bg-white border-gray-200 dark:border-gray-600 dark:bg-gray-900"
-          >
-            <UButton
-              color="white"
-              :label="t('aboutUs')"
-              icon="i-heroicons-briefcase"
-              variant="ghost"
-              class="opacity-60 hover:opacity-100"
-              size="xl"
-              @mouseover="megaMenuDispatch(megaMenu.About)"
-            />
-            <UButton
-              color="white"
-              :label="t('software')"
-              icon="i-heroicons-code-bracket"
-              variant="ghost"
-              class="opacity-60 hover:opacity-100"
-              size="xl"
-              @mouseover="megaMenuDispatch(megaMenu.Software)"
-            />
-            <UButton
-              color="white"
-              :label="t('engineering')"
-              icon="i-heroicons-cog-8-tooth"
-              variant="ghost"
-              class="opacity-60 hover:opacity-100"
-              size="xl"
-              @mouseover="megaMenuDispatch(megaMenu.Engineering)"
-            ></UButton>
-            <UButton
-              color="white"
-              :label="t('products')"
-              icon="i-heroicons-sparkles"
-              variant="ghost"
-              class="opacity-60 hover:opacity-100"
-              size="xl"
-              @mouseover="megaMenuDispatch(megaMenu.Products)"
-            ></UButton>
-            <UButton
-              color="white"
-              :label="t('career')"
-              icon="i-heroicons-presentation-chart-line"
-              variant="ghost"
-              class="opacity-60 hover:opacity-100"
-              size="xl"
-            ></UButton>
-          </nav>
+          <UNavigationMenu :items="items" class="w-full justify-center" />
 
-          <div class="space-x-1 pc:space-x-4 pt-2">
+          <div class="space-x-1 pc:space-x-2 pt-2 w-40">
+            <CommonColorThemeSelector />
+            <CommonLangSelector />
+            <UIcon
+              name="i-heroicons-magnifying-glass"
+              :class="[{ invisible: isSearchOpened }]"
+              class="h-5 w-5 xl:h-8 xl:w-8"
+              @mouseover="megaMenuDispatch(megaMenu.Search)"
+            ></UIcon>
+          </div>
+        </div>
+      </MainContainer>
+
+      <div v-if="isAboutOpened" class="absolute top-18 z-10 w-screen">
+        <MainNavAbout />
+      </div>
+      <div v-else-if="isSoftwareOpened" class="absolute top-18 z-10 w-screen">
+        <MainNavSoftware />
+      </div>
+      <div
+        v-else-if="isEngineeringOpened"
+        class="absolute top-18 z-10 w-screen"
+      >
+        <MainNavEngineering />
+      </div>
+      <div v-else-if="isProductsOpened" class="absolute top-18 z-10 w-screen">
+        <MainNavProducts />
+      </div>
+      <div
+        v-else-if="isSearchOpened"
+        class="absolute top-18 z-10 w-screen bg-white dark:bg-gray-900"
+      >
+        <CommonMiniSearch @search:close="isSearchOpened = false" />
+      </div>
+    </div>
+    <!-- desktop window -->
+    <div v-else>
+      <MainContainer class="border-b-1 border-(--ui-border-muted)">
+        <div class="flex justify-between p-2">
+          <div class="flex">
+            <NuxtImg src="/logo.png" class="object-contain h-10" />
+            <TypographyHeadline
+              :content="t('schleissheimer')"
+              size="lg"
+              class="hidden xl:block"
+            />
+          </div>
+
+          <UNavigationMenu :items="items" class="w-full justify-center" />
+
+          <div class="space-x-1 pc:space-x-2 pt-2 w-40">
             <CommonColorThemeSelector />
             <CommonLangSelector />
             <UIcon
