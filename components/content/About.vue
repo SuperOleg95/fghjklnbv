@@ -86,7 +86,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
     <div v-else>
       <div class="flex justify-center gap-20 bg-gray-200 dark:bg-gray-700 p-10">
         <div class="flex flex-col gap-3">
-          <h5 class="text-lg text-primary">Solutions</h5>
+          <h5 class="text-lg text-(--ui-primary)">Solutions</h5>
           <NuxtLink to="#" class="flex -mt-3"
             >Electronics Development
             <UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
@@ -97,7 +97,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
           ></NuxtLink>
         </div>
         <div class="flex flex-col gap-3">
-          <h5 class="text-lg text-primary">About us</h5>
+          <h5 class="text-lg text-(--ui-primary)">About us</h5>
           <NuxtLink to="#" class="flex -mt-3"
             >Company <UIcon name="i-mdi-chevron-right" class="mt-1"></UIcon
           ></NuxtLink>
@@ -114,7 +114,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
 
         <div class="flex flex-col">
           <div class="entry clearfix">
-            <h5 class="text-lg text-primary">Contact</h5>
+            <h5 class="text-lg text-(--ui-primary)">Contact</h5>
             <p>
               Schleissheimer Soft- und Hardwareentwicklung GmbH<br />
               Am Kalkofen 10<br />
@@ -138,10 +138,10 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
         </div>
 
         <div class="flex flex-col gap-3">
-          <h5 class="text-lg text-primary">Follow us</h5>
+          <h5 class="text-lg text-(--ui-primary)">Follow us</h5>
           <div class="flex">
             <NuxtLink to="#" class="flex">
-              <UIcon name="i-mdi-linkedin" class="text-3xl h-5 w-5"></UIcon
+              <UIcon name="i-mdi-linkedin" class="text-3xl"></UIcon
             ></NuxtLink>
             <NuxtLink to="#" class="flex"
               ><UIcon name="i-mdi-xing" class="text-3xl"></UIcon

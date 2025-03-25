@@ -27,11 +27,9 @@ function topFunction() {
   <UButton
     id="myBtn"
     size="xl"
-    class="rounded-2xl fixed right-1 bottom-1 lg:right-4 lg:bottom-4"
+    class="rounded-2xl fixed right-1 bottom-1 lg:right-4 lg:bottom-4 px-3.5"
     @click="topFunction"
-    ><UIcon
-      name="i-heroicons-chevron-double-up"
-      class="h-4 w-4 lg:h-6 lg:w-6"
-    ></UIcon
+    variant="subtle"
+    icon="i-heroicons-chevron-double-up"
   ></UButton>
 </template>

@@ -47,7 +47,8 @@ function clickOnLanguage(code: string) {
 <template>
   <UButton
     variant="ghost"
-    class="p-0 text-black dark:text-white"
+    block
+    class="text-(--ui-text)"
     @click="
       () => {
         if (store.currentLocale == 'en-US') {

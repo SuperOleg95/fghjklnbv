@@ -5,27 +5,25 @@ const { data: page } = await useAsyncData("page", () => {
 </script>
 
 <template>
-  <div
-    class="bg-(--ui-bg) space-y-5 xl:space-y-36 // flex flex-col w-full p-10"
-  >
+  <div class="bg-(--ui-bg) space-y-5 // flex flex-col w-full">
     <!-- <ContentRenderer v-if="page" :value="page" class="space-y-10" /> -->
 
-    <!-- <Top /> -->
+    <Top class="sticky top-0 bg-(--ui-bg) z-20" />
 
-    <!-- <Swiper /> -->
+    <Swiper />
 
-    <!-- <Quote /> -->
+    <Quote />
 
     <Collection />
 
-    <!-- <Refs />
+    <Refs />
 
     <Report />
 
     <Insights />
 
-    <About />
+    <About class="mb-0!" />
 
-    <ScrollTop /> -->
+    <ScrollTop />
   </div>
 </template>

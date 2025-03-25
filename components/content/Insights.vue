@@ -3,17 +3,24 @@ const { data: news } = await useAsyncData("news", () => {
   return queryCollection("news").all();
 });
 
-let items: any = [];
+let items: Array<{
+  description: string;
+  date: string;
+  color: string;
+  path: string;
+  tag: string;
+  estimate: string;
+}> = [];
 
 if (news.value) {
   for (let piece of news.value) {
     items.push({
       description: piece.description,
-      date: piece.meta.date,
-      color: piece.meta.color,
+      date: String(piece.meta.date),
+      color: String(piece.meta.color),
       path: piece.path,
-      tag: piece.meta.tag,
-      estimate: piece.meta.estimate,
+      tag: String(piece.meta.tag),
+      estimate: String(piece.meta.estimate),
     });
   }
 }
@@ -63,7 +70,16 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
             <TypographyHeadline content="Latest insights" size="lg" />
           </div>
 
-          <UCarousel :items="items" class="w-full mt-6" arrows>
+          <UCarousel
+            :items="items"
+            class="w-full mt-6"
+            loop
+            auto-scroll
+            :ui="{
+              item: 'basis-1/3',
+              dots: 'bottom-4',
+            }"
+          >
             <template #default="{ item }" class="justify-center">
               <NuxtLink
                 :to="item.path"
@@ -83,29 +99,6 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
 
                 <h5 class="text-right text-base p-5">{{ item.date }}</h5>
               </NuxtLink>
-            </template>
-
-            <template #prev="{ onClick, disabled }">
-              <UButton
-                class="absolute right-24 -top-14"
-                :disabled="disabled"
-                @click="onClick"
-                variant="outline"
-                size="xl"
-                >Prev</UButton
-              >
-            </template>
-
-            <template #next="{ onClick, disabled }">
-              <UButton
-                class="absolute right-4 -top-14"
-                :disabled="disabled"
-                @click="onClick"
-                variant="outline"
-                size="xl"
-              >
-                Next
-              </UButton>
             </template>
           </UCarousel>
         </div>
