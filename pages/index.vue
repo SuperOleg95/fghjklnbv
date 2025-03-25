@@ -12,14 +12,13 @@ const { data: page } = await useAsyncData("page", () => {
 
     <!-- <Top /> -->
 
-    <Swiper />
-    <!-- 
+    <!-- <Swiper /> -->
 
-    <Quote />
+    <!-- <Quote /> -->
 
     <Collection />
 
-    <Refs />
+    <!-- <Refs />
 
     <Report />
 
