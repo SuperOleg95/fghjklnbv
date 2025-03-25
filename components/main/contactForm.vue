@@ -29,7 +29,7 @@ let data = {
         <TypographyHeadline content="Messages" class="font-bold" />
         <TypographyProse
           content="We are looking forward to meeting you!"
-          class="mt-2"
+          class="mt-2 text-white"
         />
       </div>
       <div class="flex-shrink-0 mt-4 md:mt-0">

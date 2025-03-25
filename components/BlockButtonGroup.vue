@@ -29,7 +29,7 @@ function getUrl(button: any): string | undefined {
       :target="button?.external_url ? '_blank' : '_self'"
       :label="button?.label ?? undefined"
       size="xl"
-      trailing-icon="i-heroicons-arrow-right-20-solid "
+      trailing-icon="i-heroicons-arrow-right-20-solid"
     />
   </div>
 </template>

@@ -21,7 +21,7 @@ const flipped = ref(false);
       /> -->
 
       <div
-        class="w-[300px] h-[230px] xl:w-[400px] xl:h-[300px] bg-primary/80"
+        class="w-[300px] h-[230px] xl:w-[400px] xl:h-[300px] bg-(--ui-primary) opacity-50"
       ></div>
 
       <!-- Back of Team Card -->
