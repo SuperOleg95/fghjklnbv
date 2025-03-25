@@ -101,106 +101,112 @@ function megaMenuDispatch(item: megaMenu) {
   }
 }
 
-const items = ref([
-  {
-    label: t("aboutUs"),
-    icon: "i-lucide-book-open",
-    to: "/getting-started",
-    children: [
-      {
-        label: "Company",
-        description: "Fully styled and customizable components for Nuxt.",
-        icon: "i-lucide-house",
-      },
-      {
-        label: "Partner",
-        description:
-          "Learn how to install and configure Nuxt UI in your application.",
-        icon: "i-mdi-account-group",
-      },
-      {
-        label: "Philosphy",
-        icon: "i-lucide-smile",
-        description:
-          "You have nothing to do, @nuxt/icon will handle it automatically.",
-      },
-      {
-        label: "Competencies",
-        icon: "i-lucide-swatch-book",
-        description:
-          "Choose a primary and a neutral color from your Tailwind CSS theme.",
-      },
-      {
-        label: "Compliance",
-        icon: "i-lucide-cog",
-        description:
-          "You can customize components by using the `class` / `ui` props or in your app.config.ts.",
-      },
-    ],
-  },
-  {
-    label: t("software"),
-    icon: "i-lucide-database",
-    to: "/composables",
-    children: [
-      {
-        label: "Automotive Software-Engineering",
-        icon: "i-lucide-file-text",
-        description: "Define shortcuts for your application.",
-        to: "/composables/define-shortcuts",
-      },
-      {
-        label: "Medical System & Software Engineering",
-        icon: "i-lucide-file-text",
-        description: "Display a modal/slideover within your application.",
-        to: "/composables/use-overlay",
-      },
-      {
-        label: "Cyber Security",
-        icon: "i-lucide-file-text",
-        description: "Display a toast within your application.",
-        to: "/composables/use-toast",
-      },
-    ],
-  },
-  {
-    label: t("engineering"),
-    icon: "i-lucide-box",
-    to: "/components",
-    active: true,
-    children: [
-      {
-        label: "Efficient Cost Reduction with Customized Supplier Solutions",
-        icon: "i-lucide-file-text",
-        description: "Use NuxtLink with superpowers.",
-        to: "/components/link",
-      },
-      {
-        label: "Measuring and Test Equipment",
-        icon: "i-lucide-file-text",
-        description: "Display a modal within your application.",
-        to: "/components/modal",
-      },
-      {
-        label: "Micro HiL Cluster",
-        icon: "i-lucide-file-text",
-        description: "Display a list of links.",
-        to: "/components/navigation-menu",
-      },
-    ],
-  },
-  {
-    label: "Products",
-    icon: "i-heroicons-bars-3",
-    to: "#",
-  },
-  {
-    label: "Career",
-    icon: "i-heroicons-globe-europe-africa",
-    badge: "10",
-    to: "#",
-  },
-]);
+const items = computed(() => {
+  return [
+    {
+      label: t("aboutUs"),
+      icon: "i-lucide-book-open",
+      to: "#",
+      children: [
+        {
+          label: "Company",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          icon: "i-lucide-house",
+        },
+        {
+          label: "Partner",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          icon: "i-mdi-account-group",
+        },
+        {
+          label: "Philosphy",
+          icon: "i-lucide-smile",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        },
+        {
+          label: "Competencies",
+          icon: "i-lucide-swatch-book",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        },
+        {
+          label: "Compliance",
+          icon: "i-lucide-cog",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        },
+      ],
+    },
+    {
+      label: t("software"),
+      icon: "i-lucide-database",
+      to: "#",
+      children: [
+        {
+          label: "Automotive Software-Engineering",
+          icon: "i-lucide-file-text",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          to: "/composables/define-shortcuts",
+        },
+        {
+          label: "Medical System & Software Engineering",
+          icon: "i-lucide-file-text",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          to: "/composables/use-overlay",
+        },
+        {
+          label: "Cyber Security",
+          icon: "i-lucide-file-text",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          to: "/composables/use-toast",
+        },
+      ],
+    },
+    {
+      label: t("engineering"),
+      icon: "i-lucide-box",
+      to: "#",
+      active: true,
+      children: [
+        {
+          label: "Efficient Cost Reduction with Customized Supplier Solutions",
+          icon: "i-lucide-file-text",
+          description: "Use NuxtLink with superpowers.",
+          to: "/components/link",
+        },
+        {
+          label: "Measuring and Test Equipment",
+          icon: "i-lucide-file-text",
+          description: "Display a modal within your application.",
+          to: "/components/modal",
+        },
+        {
+          label: "Micro HiL Cluster",
+          icon: "i-lucide-file-text",
+          description: "Display a list of links.",
+          to: "/components/navigation-menu",
+        },
+      ],
+    },
+    {
+      label: "Products",
+      icon: "i-heroicons-bars-3",
+      to: "#",
+    },
+    {
+      label: "Career",
+      icon: "i-heroicons-globe-europe-africa",
+      badge: "10",
+      to: "#",
+    },
+  ];
+});
 </script>
 
 <template>
@@ -293,8 +299,8 @@ const items = ref([
     </div>
     <!-- desktop window -->
     <div v-else>
-      <MainContainer class="border-b-1 border-(--ui-border-muted)">
-        <div class="flex justify-between p-2">
+      <MainContainer class="border-b-1 border-(--ui-border-muted) z-10">
+        <div class="flex justify-between p-2 z-10">
           <div class="flex">
             <NuxtImg src="/logo.png" class="object-contain h-10" />
             <TypographyHeadline

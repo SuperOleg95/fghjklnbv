@@ -5,12 +5,15 @@ const { data: page } = await useAsyncData("page", () => {
 </script>
 
 <template>
-  <div class="bg-(--ui-bg) space-y-5 xl:space-y-10 // flex flex-col w-full">
+  <div
+    class="bg-(--ui-bg) space-y-5 xl:space-y-36 // flex flex-col w-full p-10"
+  >
     <!-- <ContentRenderer v-if="page" :value="page" class="space-y-10" /> -->
 
-    <Top />
+    <!-- <Top /> -->
 
-    <!-- <Swiper />
+    <Swiper />
+    <!-- 
 
     <Quote />
 
