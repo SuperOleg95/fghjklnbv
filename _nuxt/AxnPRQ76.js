@@ -1,0 +1,1 @@
+import{_ as s}from"./DlAUqK2U.js";import{c as o,i as t,g as r,Q as c}from"./C2xaVShD.js";const n={},a={class:"flex justify-center mx-2 md:px-0"},i={class:"w-[700px] sm:w-[850px] lg:w-[1000px] xl:w-[1280px] overflow-hidden"};function d(e,l){return t(),o("div",a,[r("div",i,[c(e.$slots,"default")])])}const p=s(n,[["render",d]]);export{p as M};
