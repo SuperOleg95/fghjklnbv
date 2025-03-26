@@ -81,6 +81,11 @@ let data = {
           v-for="row in data?.rows"
           :key="row?.id"
           class="relative grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-24 ring-primary/50 ring-1 rounded-panel p-4 rounded-xl"
+          v-motion
+          :initial="{ opacity: 0, scale: 0.5, y: 0 }"
+          :visibleOnce="{ opacity: 1, scale: 1, y: 0 }"
+          :duration="1000"
+          :delay="250"
         >
           <div class="my-auto lg:col-span-2">
             <TypographyHeadline v-if="row?.headline" :content="row?.headline" />
@@ -92,12 +97,7 @@ let data = {
           </div>
           <div
             v-if="row.image"
-            v-motion
             class="order-first block w-full h-full overflow-hidden rounded-card"
-            :initial="{ opacity: 0, scale: 0.5, y: 0 }"
-            :visibleOnce="{ opacity: 1, scale: 1, y: 0 }"
-            :duration="1000"
-            :delay="250"
             :class="[
               {
                 'lg:order-last': row?.image_position === 'right',

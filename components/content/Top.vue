@@ -262,15 +262,21 @@ const items = computed(() => {
 
           <UNavigationMenu :items="items" class="w-full justify-center" />
 
-          <div class="space-x-1 pc:space-x-2 pt-2 w-40">
-            <CommonColorThemeSelector />
+          <div class="space-x-1 pc:space-x-2 pt-2 flex">
+            <CommonPrimarySelector />
             <CommonLangSelector />
-            <UIcon
-              name="i-heroicons-magnifying-glass"
+            <UButton
+              variant="ghost"
+              block
+              class="text-(--ui-text)"
               :class="[{ invisible: isSearchOpened }]"
-              class="h-5 w-5 xl:h-8 xl:w-8"
-              @mouseover="megaMenuDispatch(megaMenu.Search)"
-            ></UIcon>
+            >
+              <UIcon
+                name="i-heroicons-magnifying-glass"
+                class="h-5 w-5 xl:h-8 xl:w-8"
+                @click="megaMenuDispatch(megaMenu.Search)"
+              ></UIcon>
+            </UButton>
           </div>
         </div>
       </MainContainer>

@@ -35,29 +35,6 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
   <div>
     <!-- Should render only on mobile -->
     <div v-if="viewport.isLessThan('tablet')">
-      <!-- <MainContainer>
-        <div class="flex flex-col">
-          <div class="ps-5">
-            <TypographyTitle>Our news</TypographyTitle>
-            <TypographyHeadline content="Latest insights" size="lg" />
-          </div>
-
-          <UCarousel :items="items" class="w-screen mt-6">
-            <template #default="{ item }" class="justify-center">
-              <NuxtLink
-                :to="item.path"
-                class="h-[230px] w-[170px] flex flex-col bg-gray-200 dark:bg-gray-600 rounded-3xl mb-2 mx-2 lg:mx-4"
-              >
-                <div :class="`min-h-[60%] ${item.color} rounded-t-3xl`"></div>
-
-                <h5 class="text-base p-2 lg:p-5">{{ item.description }}</h5>
-
-                <h5 class="text-right text-xs p-5">{{ item.date }}</h5>
-              </NuxtLink>
-            </template>
-          </UCarousel>
-        </div>
-      </MainContainer> -->
       <MainContainer>
         <div class="flex flex-col">
           <div class="ps-5">
@@ -98,6 +75,45 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
       </MainContainer>
     </div>
     <!-- Tablet window -->
+    <div v-if="viewport.isLessThan('desktop')">
+      <MainContainer>
+        <div class="flex flex-col px-4">
+          <div class="ps-5">
+            <TypographyTitle>Our news</TypographyTitle>
+            <TypographyHeadline content="Latest insights" size="lg" />
+          </div>
+
+          <UCarousel
+            :items="items"
+            class="w-full mt-6"
+            loop
+            :ui="{
+              item: 'basis-1/3',
+              dots: 'bottom-4',
+            }"
+          >
+            <template #default="{ item }" class="justify-center">
+              <NuxtLink
+                :to="item.path"
+                class="h-[280px] w-[230px] flex flex-col bg-gray-200 dark:bg-gray-600 rounded-3xl mb-2 mx-4"
+              >
+                <div :class="`min-h-[60%] ${item.color} rounded-t-3xl`"></div>
+
+                <div>
+                  <span class="text-lg ps-5 p-2 inline-block"
+                    >#{{ item.tag }}</span
+                  >
+                  <span class="text-lg p-2">{{ item.estimate }}</span>
+                </div>
+                <h5 class="text-2xl p-5">{{ item.description }}</h5>
+
+                <h5 class="text-right text-base p-5">{{ item.date }}</h5>
+              </NuxtLink>
+            </template>
+          </UCarousel>
+        </div>
+      </MainContainer>
+    </div>
     <div v-else>
       <MainContainer>
         <div class="flex flex-col">
