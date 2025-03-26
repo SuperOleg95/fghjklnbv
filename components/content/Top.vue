@@ -216,8 +216,8 @@ const items = computed(() => {
       <MainContainer>
         <div class="flex justify-between">
           <TypographyHeadline :content="t('schleissheimer')" size="xl" />
-          <div class="pt-2 space-x-2">
-            <CommonColorThemeSelector />
+          <div class="pt-2 space-x-2 flex">
+            <CommonPrimarySelector />
             <CommonLangSelector />
 
             <USlideover
@@ -226,7 +226,7 @@ const items = computed(() => {
               close-icon="i-lucide-arrow-right"
             >
               <UButton
-                :padded="false"
+                block
                 label="Open"
                 @click="isOpen = true"
                 variant="ghost"

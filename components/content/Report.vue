@@ -7,7 +7,7 @@ const description = event?.value?.description || "";
 const path = event?.value?.path;
 const meta = event?.value?.meta;
 const button = meta?.button;
-const color = meta?.color;
+const color = "bg-" + String(meta?.color) + "-400";
 
 const viewport = useViewport();
 
@@ -37,7 +37,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
                 >{{ button }}</UButton
               >
             </div>
-            <div :class="`h-full bg-${color}-500 rounded-b-xl`"></div>
+            <div :class="`h-full ${color} rounded-b-xl`"></div>
           </div>
         </NuxtLink>
       </MainContainer>
@@ -62,7 +62,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
           </div>
 
           <div
-            :class="`w-1/2 bg-${color}-500 h-[350px] rounded-r-3xl hidden md:block`"
+            :class="`w-1/2 ${color} h-[350px] rounded-r-3xl hidden md:block`"
           ></div>
         </div>
       </MainContainer>
