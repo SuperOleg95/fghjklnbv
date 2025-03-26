@@ -36,7 +36,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
       loop
       dots
       fade
-      :autoplay="{ delay: 4000 }"
+      :autoplay="{ delay: 8000 }"
       :ui="{
         item: 'basis-full',
         dots: 'bottom-4',

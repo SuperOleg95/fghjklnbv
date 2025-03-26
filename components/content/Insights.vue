@@ -36,12 +36,12 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
     <!-- Should render only on mobile -->
     <div v-if="viewport.isLessThan('tablet')">
       <MainContainer>
-        <div class="flex flex-col">
-          <div class="ps-5">
-            <TypographyTitle>Our news</TypographyTitle>
-            <TypographyHeadline content="Latest insights" size="lg" />
-          </div>
+        <div class="text-center">
+          <TypographyTitle>Our news</TypographyTitle>
+          <TypographyHeadline content="Latest insights" size="sm" />
+        </div>
 
+        <div class="flex flex-col">
           <UCarousel
             :items="items"
             class="w-full mt-6"
@@ -75,7 +75,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
       </MainContainer>
     </div>
     <!-- Tablet window -->
-    <div v-if="viewport.isLessThan('desktop')" class="!overflow-hidden">
+    <div v-else-if="viewport.isLessThan('desktop')" class="!overflow-hidden">
       <MainContainer>
         <div class="flex flex-col px-4">
           <div class="ps-5">

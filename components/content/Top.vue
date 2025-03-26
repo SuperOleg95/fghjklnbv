@@ -215,7 +215,9 @@ const items = computed(() => {
     <div v-if="viewport.isLessThan('tablet')">
       <MainContainer>
         <div class="flex justify-between">
-          <TypographyHeadline :content="t('schleissheimer')" size="xl" />
+          <NuxtLink to="/">
+            <TypographyHeadline :content="t('schleissheimer')" size="xl" />
+          </NuxtLink>
           <div class="pt-2 space-x-2 flex">
             <CommonPrimarySelector />
             <CommonLangSelector />
@@ -251,14 +253,14 @@ const items = computed(() => {
     >
       <MainContainer class="border-b-1 border-(--ui-border-muted)">
         <div class="flex justify-between p-2">
-          <div class="flex">
+          <NuxtLink class="flex" to="/">
             <NuxtImg src="/logo.png" class="object-contain h-10" />
             <TypographyHeadline
               :content="t('schleissheimer')"
               size="lg"
               class="hidden xl:block"
             />
-          </div>
+          </NuxtLink>
 
           <UNavigationMenu :items="items" class="w-full justify-center" />
 
@@ -307,14 +309,14 @@ const items = computed(() => {
     <div v-else>
       <MainContainer class="border-b-1 border-(--ui-border-muted) z-10">
         <div class="flex justify-between p-2 z-10">
-          <div class="flex">
+          <NuxtLink class="flex" to="/">
             <NuxtImg src="/logo.png" class="object-contain h-10" />
             <TypographyHeadline
               :content="t('schleissheimer')"
               size="lg"
               class="hidden xl:block"
             />
-          </div>
+          </NuxtLink>
 
           <UNavigationMenu :items="items" class="w-full justify-center" />
 
