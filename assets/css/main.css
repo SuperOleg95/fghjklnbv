@@ -8,9 +8,11 @@
 
 :root {
   --ui-text-primary: var(--ui-color-primary);
+  --ui-ring-custom: var(--color-neutral-400);
 }
 
 .dark {
   /* Main background color */
   --ui-bg: var(--ui-color-neutral-900);
+  --ui-ring-custom: var(--color-neutral-700);
 }

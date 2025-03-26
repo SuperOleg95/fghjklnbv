@@ -75,7 +75,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
       </MainContainer>
     </div>
     <!-- Tablet window -->
-    <div v-if="viewport.isLessThan('desktop')">
+    <div v-if="viewport.isLessThan('desktop')" class="!overflow-hidden">
       <MainContainer>
         <div class="flex flex-col px-4">
           <div class="ps-5">
@@ -87,6 +87,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
             :items="items"
             class="w-full mt-6"
             loop
+            auto-scroll
             :ui="{
               item: 'basis-1/3',
               dots: 'bottom-4',
