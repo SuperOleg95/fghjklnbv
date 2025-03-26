@@ -34,7 +34,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
 <template>
   <div>
     <!-- Should render only on mobile -->
-    <div v-if="viewport.isLessThan('tablet')">
+    <div v-if="viewport.isLessThan('tablet')" class="!overflow-hidden">
       <MainContainer>
         <div class="text-center">
           <TypographyTitle>Our news</TypographyTitle>
