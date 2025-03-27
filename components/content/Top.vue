@@ -172,7 +172,6 @@ const items = computed(() => {
       label: t("engineering"),
       icon: "i-lucide-box",
       to: "#",
-      active: true,
       children: [
         {
           label: "Efficient Cost Reduction with Customized Supplier Solutions",

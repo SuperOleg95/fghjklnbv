@@ -77,7 +77,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
     <!-- Tablet window -->
     <div v-else-if="viewport.isLessThan('desktop')" class="!overflow-hidden">
       <MainContainer>
-        <div class="flex flex-col px-4">
+        <div class="flex flex-col px-4 mx-2">
           <div class="ps-5">
             <TypographyTitle>Our news</TypographyTitle>
             <TypographyHeadline content="Latest insights" size="lg" />
@@ -109,6 +109,47 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
                 <h5 class="text-2xl p-5">{{ item.description }}</h5>
 
                 <h5 class="text-right text-base p-5">{{ item.date }}</h5>
+              </NuxtLink>
+            </template>
+          </UCarousel>
+        </div>
+      </MainContainer>
+    </div>
+    <!-- laptop window -->
+    <div v-else-if="viewport.isLessThan('desktopMedium')">
+      <MainContainer>
+        <div class="flex flex-col">
+          <div class="ps-5">
+            <TypographyTitle>Our news</TypographyTitle>
+            <TypographyHeadline content="Latest insights" size="lg" />
+          </div>
+
+          <UCarousel
+            :items="items"
+            class="w-full mt-6"
+            loop
+            auto-scroll
+            :ui="{
+              item: 'basis-1/3',
+              dots: 'bottom-4',
+            }"
+          >
+            <template #default="{ item }" class="justify-center">
+              <NuxtLink
+                :to="item.path"
+                class="h-[400px] w-[290px] flex flex-col bg-gray-200 dark:bg-gray-600 rounded-3xl mb-2 mx-4"
+              >
+                <div :class="`min-h-[60%] ${item.color} rounded-t-3xl`"></div>
+
+                <div>
+                  <span class="text-base ps-5 p-2 inline-block"
+                    >#{{ item.tag }}</span
+                  >
+                  <span class="text-base p-2">{{ item.estimate }}</span>
+                </div>
+                <h5 class="text-4xl p-5">{{ item.description }}</h5>
+
+                <h5 class="text-right text-base p-1">{{ item.date }}</h5>
               </NuxtLink>
             </template>
           </UCarousel>

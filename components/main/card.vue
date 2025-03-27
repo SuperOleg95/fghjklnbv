@@ -10,7 +10,7 @@ const props = defineProps({
 <template>
   <NuxtLink :to="props.link">
     <div
-      class="h-[400px] lg:h-[600px] rounded-xl bg-gray-200 dark:bg-gray-700 flex flex-col"
+      class="h-[400px] xl:h-[600px] rounded-xl bg-gray-200 dark:bg-gray-700 flex flex-col"
     >
       <div :class="`min-h-[60%] bg-${props.color}-400 rounded-t-xl`"></div>
       <div class="pt-14 p-4 2xl:text-3xl">
