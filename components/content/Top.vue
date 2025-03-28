@@ -150,7 +150,7 @@ const items = computed(() => {
               <template #body>
                 <div class="p-4 flex-1">
                   <UNavigationMenu orientation="vertical" :items="items" />
-                  <CommonSearch />
+                  <CommonSearch class="!p-0 !mt-4" />
                 </div>
               </template>
             </USlideover>

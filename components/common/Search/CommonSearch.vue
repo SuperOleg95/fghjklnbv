@@ -25,6 +25,11 @@ const items = [
 
 const emit = defineEmits(["search:close"]);
 
+function closeClick() {
+  query.value = "";
+  emit("search:close");
+}
+
 // Add data to the MiniSearch instance
 miniSearch.addAll(toValue(data.value));
 const result = computed(() => miniSearch.search(toValue(query)));
@@ -34,7 +39,7 @@ const result = computed(() => miniSearch.search(toValue(query)));
   <UContainer class="p-4">
     <div class="flex justify-center">
       <UInput v-model="query" class="grow" placeholder="Search..." />
-      <UButton variant="ghost" @click="emit('search:close')">
+      <UButton variant="ghost" @click="closeClick()">
         <UIcon
           name="i-heroicons-x-mark-20-solid"
           class="h-5 w-5 xl:h-6 xl:w-6"
