@@ -8,98 +8,11 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
   console.log("Breakpoint updated:", oldBreakpoint, "->", newBreakpoint);
 });
 
-const links = computed(() => {
-  return [
-    {
-      label: t("aboutUs"),
-      icon: "i-heroicons-briefcase",
-      to: "#",
-    },
-    {
-      label: t("software"),
-      icon: "i-heroicons-cog-8-tooth",
-      to: "#",
-    },
-    {
-      label: t("engineering"),
-      icon: "i-heroicons-command-line",
-      to: "#",
-    },
-    {
-      label: t("products"),
-      icon: "i-heroicons-sparkles",
-      to: "#",
-    },
-    {
-      label: t("career"),
-      icon: "i-heroicons-presentation-chart-line",
-      to: "#",
-    },
-  ];
-});
-
-const isAboutOpened = ref(false);
-const isSoftwareOpened = ref(false);
-const isEngineeringOpened = ref(false);
-const isProductsOpened = ref(false);
+// search pane
 const isSearchOpened = ref(false);
 
+// mobile slideover
 const isOpen = ref(false);
-
-enum megaMenu {
-  Search = "Search",
-  About = "About",
-  Software = "Software",
-  Engineering = "Engineering",
-  Products = "Products",
-  Closed = "Closed",
-}
-
-function megaMenuDispatch(item: megaMenu) {
-  let refList = [
-    isAboutOpened,
-    isSoftwareOpened,
-    isEngineeringOpened,
-    isProductsOpened,
-    isSearchOpened,
-  ];
-  let refListCopy: globalThis.Ref<boolean, boolean>[] = refList;
-
-  switch (item) {
-    case megaMenu.About:
-      refListCopy.splice(refListCopy.indexOf(isAboutOpened), 1);
-      isAboutOpened.value = true;
-      break;
-
-    case megaMenu.Software:
-      refListCopy.splice(refListCopy.indexOf(isSoftwareOpened), 1);
-      isSoftwareOpened.value = true;
-      break;
-
-    case megaMenu.Engineering:
-      refListCopy.splice(refListCopy.indexOf(isEngineeringOpened), 1);
-      isEngineeringOpened.value = true;
-      break;
-
-    case megaMenu.Products:
-      refListCopy.splice(refListCopy.indexOf(isProductsOpened), 1);
-      isProductsOpened.value = true;
-      break;
-
-    case megaMenu.Search:
-      refListCopy.splice(refListCopy.indexOf(isSearchOpened), 1);
-      isSearchOpened.value = true;
-      break;
-
-    case megaMenu.Closed:
-      // close all
-      break;
-  }
-
-  for (let ref of refListCopy) {
-    ref.value = false;
-  }
-}
 
 const items = computed(() => {
   return [
@@ -231,13 +144,13 @@ const items = computed(() => {
                 label="Open"
                 @click="isOpen = true"
                 variant="ghost"
-                class="text-black dark:text-white"
+                class="text-(--ui-text)"
                 ><UIcon name="i-heroicons-bars-3" class="h-5 w-5"></UIcon
               ></UButton>
               <template #body>
                 <div class="p-4 flex-1">
                   <UNavigationMenu orientation="vertical" :items="items" />
-                  <CommonMiniSearch />
+                  <CommonSearch />
                 </div>
               </template>
             </USlideover>
@@ -246,10 +159,7 @@ const items = computed(() => {
       </MainContainer>
     </div>
     <!-- Tablet window -->
-    <div
-      v-else-if="viewport.isLessThan('desktop')"
-      @mouseleave="megaMenuDispatch(megaMenu.Closed)"
-    >
+    <div v-else-if="viewport.isLessThan('desktop')">
       <MainContainer class="border-b-1 border-(--ui-border-muted)">
         <div class="flex justify-between p-2">
           <NuxtLink class="flex" to="/">
@@ -266,42 +176,16 @@ const items = computed(() => {
           <div class="space-x-1 pc:space-x-2 pt-2 flex">
             <CommonPrimarySelector />
             <CommonLangSelector />
-            <UButton
-              variant="ghost"
-              block
-              class="text-(--ui-text)"
+            <CommonSearchButton
+              @search:open="isSearchOpened = true"
               :class="[{ invisible: isSearchOpened }]"
-            >
-              <UIcon
-                name="i-heroicons-magnifying-glass"
-                class="h-5 w-5 xl:h-8 xl:w-8"
-                @click="megaMenuDispatch(megaMenu.Search)"
-              ></UIcon>
-            </UButton>
+            />
           </div>
         </div>
       </MainContainer>
 
-      <div v-if="isAboutOpened" class="absolute top-18 z-10 w-screen">
-        <MainNavAbout />
-      </div>
-      <div v-else-if="isSoftwareOpened" class="absolute top-18 z-10 w-screen">
-        <MainNavSoftware />
-      </div>
-      <div
-        v-else-if="isEngineeringOpened"
-        class="absolute top-18 z-10 w-screen"
-      >
-        <MainNavEngineering />
-      </div>
-      <div v-else-if="isProductsOpened" class="absolute top-18 z-10 w-screen">
-        <MainNavProducts />
-      </div>
-      <div
-        v-else-if="isSearchOpened"
-        class="absolute top-18 z-10 w-screen bg-white dark:bg-gray-900"
-      >
-        <CommonMiniSearch @search:close="isSearchOpened = false" />
+      <div v-if="isSearchOpened">
+        <CommonSearch @search:close="isSearchOpened = false" />
       </div>
     </div>
     <!-- desktop window -->
@@ -322,42 +206,17 @@ const items = computed(() => {
           <div class="space-x-1 pc:space-x-2 pt-2 flex">
             <CommonPrimarySelector />
             <CommonLangSelector />
-            <UButton
-              variant="ghost"
-              block
-              class="text-(--ui-text)"
+
+            <CommonSearchButton
+              @search:open="isSearchOpened = true"
               :class="[{ invisible: isSearchOpened }]"
-            >
-              <UIcon
-                name="i-heroicons-magnifying-glass"
-                class="h-5 w-5 xl:h-8 xl:w-8"
-                @click="megaMenuDispatch(megaMenu.Search)"
-              ></UIcon>
-            </UButton>
+            />
           </div>
         </div>
       </MainContainer>
 
-      <div v-if="isAboutOpened" class="absolute top-18 z-10 w-screen">
-        <MainNavAbout />
-      </div>
-      <div v-else-if="isSoftwareOpened" class="absolute top-18 z-10 w-screen">
-        <MainNavSoftware />
-      </div>
-      <div
-        v-else-if="isEngineeringOpened"
-        class="absolute top-18 z-10 w-screen"
-      >
-        <MainNavEngineering />
-      </div>
-      <div v-else-if="isProductsOpened" class="absolute top-18 z-10 w-screen">
-        <MainNavProducts />
-      </div>
-      <div
-        v-else-if="isSearchOpened"
-        class="absolute top-18 z-10 w-full bg-white dark:bg-gray-900"
-      >
-        <CommonMiniSearch @search:close="isSearchOpened = false" />
+      <div v-if="isSearchOpened">
+        <CommonSearch @search:close="isSearchOpened = false" />
       </div>
     </div>
   </div>
