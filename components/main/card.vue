@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { colors_500 } from "#imports";
 const props = defineProps({
   heading: String,
   description: String,
@@ -12,7 +13,11 @@ const props = defineProps({
     <div
       class="h-[400px] xl:h-[600px] rounded-xl bg-gray-200 dark:bg-gray-700 flex flex-col"
     >
-      <div :class="`min-h-[60%] bg-${props.color}-400 rounded-t-xl`"></div>
+      <div
+        :data-tone="props.color"
+        :class="colors_500"
+        class="min-h-[60%] rounded-t-xl"
+      ></div>
       <div class="pt-14 p-4 2xl:text-3xl">
         <div class="flex">
           <h5>{{ props.heading }}</h5>

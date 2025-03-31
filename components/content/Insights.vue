@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { colors_500 } from "#imports";
 const { data: news } = await useAsyncData("news", () => {
   return queryCollection("news").all();
 });
@@ -17,7 +18,7 @@ if (news.value) {
     items.push({
       description: piece.description,
       date: String(piece.meta.date),
-      color: "bg-" + String(piece.meta.color) + "-400",
+      color: String(piece.meta.color),
       path: piece.path,
       tag: String(piece.meta.tag),
       estimate: String(piece.meta.estimate),
@@ -57,7 +58,11 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
                 :to="item.path"
                 class="h-[230px] w-[170px] flex flex-col bg-gray-200 dark:bg-gray-600 rounded-3xl mb-2 mx-4"
               >
-                <div :class="`min-h-[60%] ${item.color} rounded-t-3xl`"></div>
+                <div
+                  :data-tone="item.color"
+                  :class="colors_500"
+                  class="min-h-[60%] rounded-t-3xl"
+                ></div>
 
                 <div>
                   <span class="text-sm ps-5 p-2 inline-block"
@@ -98,7 +103,11 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
                 :to="item.path"
                 class="h-[280px] w-[230px] flex flex-col bg-gray-200 dark:bg-gray-600 rounded-3xl mb-2 mx-4"
               >
-                <div :class="`min-h-[60%] ${item.color} rounded-t-3xl`"></div>
+                <div
+                  :data-tone="item.color"
+                  :class="colors_500"
+                  class="min-h-[60%] rounded-t-3xl"
+                ></div>
 
                 <div>
                   <span class="text-lg ps-5 p-2 inline-block"
@@ -139,7 +148,11 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
                 :to="item.path"
                 class="h-[400px] w-[290px] flex flex-col bg-gray-200 dark:bg-gray-600 rounded-3xl mb-2 mx-4"
               >
-                <div :class="`min-h-[60%] ${item.color} rounded-t-3xl`"></div>
+                <div
+                  :data-tone="item.color"
+                  :class="colors_500"
+                  class="min-h-[60%] rounded-t-3xl"
+                ></div>
 
                 <div>
                   <span class="text-base ps-5 p-2 inline-block"
@@ -179,7 +192,11 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
                 :to="item.path"
                 class="h-[500px] w-[335px] flex flex-col bg-gray-200 dark:bg-gray-600 rounded-3xl mb-2 mx-4"
               >
-                <div :class="`min-h-[60%] ${item.color} rounded-t-3xl`"></div>
+                <div
+                  :data-tone="item.color"
+                  :class="colors_500"
+                  class="min-h-[60%] rounded-t-3xl"
+                ></div>
 
                 <div>
                   <span class="text-base ps-5 p-2 inline-block"

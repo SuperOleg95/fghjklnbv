@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const { t } = useI18n();
 const colorMode = useColorMode();
 
 const colorThemeIcons = computed(() => {
@@ -58,7 +57,7 @@ const appConfig = useAppConfig();
         <div class="text-left pb-1.5 text-sm">Theme</div>
         <div class="grid grid-cols-3 gap-1.5">
           <button
-            @click="colorMode.preference = 'system'"
+            @click="colorMode.preference = 'auto'"
             type="button"
             :class="`w-18 capitalize font-medium inline-flex items-center px-2 py-1 gap-1.5 ring ring-(--ui-ring-custom) rounded-lg text-[9px] hover:bg-(--ui-bg-accented)`"
           >

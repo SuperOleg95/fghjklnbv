@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const viewport = useViewport();
+import { colors_500 } from "#imports";
 
 const { data: slider } = await useAsyncData("slides", () => {
   return queryCollection("slider").all();
@@ -42,7 +43,11 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
         dots: 'bottom-4',
       }"
     >
-      <div :class="`w-full h-[600px] bg-${item.color}-400 rounded-lg relative`">
+      <div
+        :data-tone="item.color"
+        :class="colors_500"
+        class="w-full h-[600px] rounded-lg relative"
+      >
         <div class="absolute left-[7%] top-[50%] space-y-2">
           <h1 class="text-2xl font-bold">{{ item.title }}</h1>
           <div class="h-1 w-40 bg-black"></div>

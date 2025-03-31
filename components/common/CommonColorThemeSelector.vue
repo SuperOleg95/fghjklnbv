@@ -39,8 +39,7 @@ const colorThemeIcons = computed(() => {
 });
 
 const statusBarThemeIcon = computed(() => {
-  const mode = colorMode.preference;
-  switch (mode) {
+  switch (colorMode.value) {
     case "light":
       return "i-heroicons-sun-20-solid";
     case "dark":

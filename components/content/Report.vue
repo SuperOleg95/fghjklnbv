@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { colors_500 } from "#imports";
 const { data: event } = await useAsyncData("event", () => {
   return queryCollection("event").first();
 });
@@ -7,7 +8,7 @@ const description = event?.value?.description || "";
 const path = event?.value?.path;
 const meta = event?.value?.meta;
 const button = meta?.button;
-const color = "bg-" + String(meta?.color) + "-400";
+const color = meta?.color;
 
 const viewport = useViewport();
 
@@ -37,7 +38,11 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
                 >{{ button }}</UButton
               >
             </div>
-            <div :class="`h-full ${color} rounded-b-xl`"></div>
+            <div
+              :data-tone="color"
+              :class="colors_500"
+              class="`h-full rounded-b-xl`"
+            ></div>
           </div>
         </NuxtLink>
       </MainContainer>
@@ -62,7 +67,9 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
           </div>
 
           <div
-            :class="`w-1/2 ${color} h-[350px] rounded-r-3xl hidden md:block`"
+            :data-tone="color"
+            :class="colors_500"
+            class="w-1/2 h-[350px] rounded-r-3xl hidden md:block"
           ></div>
         </div>
       </MainContainer>
