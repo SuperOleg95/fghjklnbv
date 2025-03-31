@@ -1,0 +1,1 @@
+import{j as s,c as t,i as c,g as o,R as n}from"./Bvv48LDk.js";const a={},r={class:"flex justify-center mx-2 md:px-0"},i={class:"w-[700px] sm:w-[850px] lg:w-[1000px] xl:w-[1280px]"};function l(e,_){return c(),t("div",r,[o("div",i,[n(e.$slots,"default")])])}const x=s(a,[["render",l]]);export{x as M};
