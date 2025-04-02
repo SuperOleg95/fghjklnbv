@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { MainNavAbout } from "#components";
-
 const { t } = useI18n();
 const viewport = useViewport();
 
@@ -149,7 +147,7 @@ const items = computed(() => {
               ></UButton>
               <template #body>
                 <div class="p-4 flex-1">
-                  <UNavigationMenu orientation="vertical" :items="items" />
+                  <UNavigationMenu orientation="vertical" :items />
                   <CommonSearch class="!p-0 !mt-4" />
                 </div>
               </template>
@@ -171,7 +169,7 @@ const items = computed(() => {
             />
           </NuxtLink>
 
-          <UNavigationMenu :items="items" class="w-full justify-center" />
+          <UNavigationMenu :items class="w-full justify-center" />
 
           <div class="space-x-1 pc:space-x-2 pt-2 flex">
             <CommonPrimarySelector />
@@ -201,7 +199,7 @@ const items = computed(() => {
             />
           </NuxtLink>
 
-          <UNavigationMenu :items="items" class="w-full justify-center" />
+          <UNavigationMenu :items class="w-full justify-center" />
 
           <div class="space-x-1 pc:space-x-2 pt-2 flex">
             <CommonPrimarySelector />

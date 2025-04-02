@@ -135,32 +135,9 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
           </div>
           <div
             v-else
-            v-motion
-            :initial="{
-              opacity: 0,
-              scale: 1,
-              x: isEven(stepIdx) ? -100 : 100,
-            }"
-            :visibleOnce="{
-              opacity: 1,
-              x: 0,
-              scale: 1,
-              transition: {
-                duration: 1000,
-              },
-            }"
-            :delay="300"
-            :class="[
-              {
-                'mr-8 md:mr-24': isEven(stepIdx),
-                'ml-8 md:ml-24': !isEven(stepIdx),
-              },
-              {
-                'md:flex-row': isEven(stepIdx),
-                'md:flex-row-reverse md:space-x-reverse': !isEven(stepIdx),
-              },
-              'relative p-6 md:flex md:space-x-8 ring-primary/50 ring-1 rounded-panel',
-            ]"
+            :data-aos="isEven(stepIdx) ? 'fade-left' : 'fade-right'"
+            data-aos-delay="400"
+            class="relative p-6 md:flex md:space-x-8 ring-primary/50 ring-1 rounded-panel,"
           >
             <div
               v-if="step.image"
