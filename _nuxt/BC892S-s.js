@@ -1,0 +1,1 @@
+import{j as n,E as c,i as e,w as a,f as s,a2 as _,H as r}from"./W8QbGzh9.js";const i={};function m(f,l){const t=_,o=r;return e(),c(o,{id:"myBtn",class:"rounded-xl fixed right-2 bottom-2 lg:right-4 lg:bottom-4",to:"/",variant:"outline"},{default:a(()=>[s(t,{name:"i-heroicons-arrow-left",class:"h-7 w-6"})]),_:1})}const p=n(i,[["render",m]]);export{p as _};
