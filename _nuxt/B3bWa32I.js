@@ -1,1 +1,0 @@
-import{O as a,P as s,e as n,w as o,a9 as r,b2 as p}from"./6NqEYogw.js";const c=a({__name:"Title",props:{as:{default:"h2"}},setup(e){return(t,i)=>(n(),s(p(e.as),{class:"font-medium tracking-wider uppercase font-display text-(--ui-primary)"},{default:o(()=>[r(t.$slots,"default")]),_:3}))}}),l=Object.assign(c,{__name:"TypographyTitle"});export{l as _};

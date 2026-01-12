@@ -1,1 +1,0 @@
-import{d as e,e as o,h as c}from"./6NqEYogw.js";const r={class:"float-right"},a=["src"],m={__name:"Ilustartion",props:{img:String},setup(s){const t=s;return(n,i)=>(o(),e("div",r,[c("img",{src:t.img,class:"min-h-40 min-w-40"},null,8,a)]))}};export{m as default};
