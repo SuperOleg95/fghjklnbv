@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "nuxt-viewport",
     "nuxt-aos",
     "nuxt-studio",
+    "@vueuse/motion/nuxt",
   ],
 
   i18n: {
@@ -61,6 +62,27 @@ export default defineNuxtConfig({
     once: false, // whether animation should happen only once - while scrolling down
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+  },
+
+  runtimeConfig: {
+    public: {
+      motion: {
+        directives: {
+          "pop-bottom": {
+            initial: {
+              scale: 0,
+              opacity: 0,
+              y: 100,
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              y: 0,
+            },
+          },
+        },
+      },
+    },
   },
 
   compatibilityDate: "2025-01-18",

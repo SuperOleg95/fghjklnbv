@@ -17,6 +17,7 @@
     "@nuxtjs/i18n": "^9.3.4",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@pinia/nuxt": "^0.5.1",
+    "@vueuse/motion": "^3.0.3",
     "better-sqlite3": "^12.5.0",
     "minisearch": "^7.1.1",
     "nuxt": "^4.2.2",

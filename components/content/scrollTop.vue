@@ -10,6 +10,7 @@ onMounted(() => {
       console.log("button exist!");
       if (document.documentElement.scrollTop > 200) {
         mybutton.style.display = "block";
+        mybutton.style.left = "!0px";
       } else {
         mybutton.style.display = "none";
       }
@@ -27,9 +28,11 @@ function topFunction() {
   <UButton
     id="myBtn"
     size="xl"
-    class="rounded-2xl fixed right-1 bottom-1 lg:right-4 lg:bottom-4 px-3.5"
+    srt
+    class="rounded-2xl fixed bottom-1 lg:bottom-4 px-3.5 left-[95%]"
     @click="topFunction"
     variant="subtle"
     icon="i-heroicons-chevron-double-up"
+    style="left: 1px !important"
   ></UButton>
 </template>

@@ -80,7 +80,27 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
       </h1>
       <div class="mt-8">
         <template v-for="(step, stepIdx) in steps" :key="stepIdx">
-          <div v-if="viewport.isLessThan('tablet')">
+          <div
+            v-if="viewport.isLessThan('tablet')"
+            v-motion
+            :initial="{
+              opacity: 0,
+              scale: 1,
+              x: 0,
+            }"
+            :visibleOnce="{
+              opacity: 1,
+              x: 0,
+              scale: 1,
+              transition: {
+                duration: 1000,
+              },
+            }"
+            :delay="300"
+            :class="[
+              'relative p-2 sm:p-6 md:flex md:space-x-8 ring-primary/50 ring-1 rounded-panel max-w-fit',
+            ]"
+          >
             <div
               v-if="step.image"
               class="flex flex-col justify-center rounded-panel mx-4"
@@ -97,7 +117,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
             </div>
 
             <div class="w-full mt-4 text-left md:mt-0">
-              <TypographyTitle v-if="step">Step {{ 1 }}</TypographyTitle>
+              <TypographyTitle v-if="step">Step {{ stepIdx }}</TypographyTitle>
               <TypographyHeadline
                 v-if="step.title"
                 :content="step.title"
@@ -113,7 +133,7 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
           </div>
           <div
             v-else
-            :data-aos="isEven(1) ? 'fade-left' : 'fade-right'"
+            :data-aos="isEven(Number(stepIdx)) ? 'fade-left' : 'fade-right'"
             data-aos-delay="400"
             class="relative p-6 md:flex md:space-x-8 ring-primary/50 ring-1 rounded-panel,"
           >
@@ -133,7 +153,9 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
             </div>
 
             <div class="w-full mt-4 text-left md:mt-0">
-              <TypographyTitle v-if="step">Step {{ 1 }}</TypographyTitle>
+              <TypographyTitle v-if="step"
+                >Step {{ Number(stepIdx) + 1 }}</TypographyTitle
+              >
               <TypographyHeadline
                 v-if="step.title"
                 :content="step.title"
