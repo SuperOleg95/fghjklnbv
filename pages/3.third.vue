@@ -27,34 +27,7 @@ function isEven(n: number) {
     <TypographyHeadline content="Refined over tons of projects" size="lg" />
     <div class="mt-8">
       <template v-for="(step, stepIdx) in steps" :key="stepIdx">
-        <div
-          v-motion
-          :initial="{
-            opacity: 0,
-            scale: 1,
-            x: isEven(stepIdx) ? -200 : 200,
-          }"
-          :visibleOnce="{
-            opacity: 1,
-            x: 0,
-            scale: 1,
-            transition: {
-              duration: 1000,
-            },
-          }"
-          :delay="300"
-          :class="[
-            {
-              'mr-8 md:mr-24': isEven(stepIdx),
-              'ml-8 md:ml-24': !isEven(stepIdx),
-            },
-            {
-              'md:flex-row': isEven(stepIdx),
-              'md:flex-row-reverse md:space-x-reverse': !isEven(stepIdx),
-            },
-            'relative p-6 md:flex md:space-x-8 ring-primary/50 ring-1 rounded-panel',
-          ]"
-        >
+        <div>
           <div
             v-if="step.image"
             class="flex-shrink-0 dark:bg-white dark:brightness-90 rounded-panel"
@@ -67,9 +40,7 @@ function isEven(n: number) {
           </div>
 
           <div class="w-full mt-4 text-left md:mt-0">
-            <TypographyTitle v-if="step"
-              >Step {{ stepIdx + 1 }}</TypographyTitle
-            >
+            <TypographyTitle v-if="step">Step {{ 1 }}</TypographyTitle>
             <TypographyHeadline
               v-if="step.title"
               :content="step.title"

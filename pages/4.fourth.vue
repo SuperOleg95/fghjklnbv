@@ -1,20 +1,6 @@
 <template>
   <BlockContainer>
-    <div
-      v-motion
-      :initial="{
-        opacity: 0,
-        y: 100,
-      }"
-      :visibleOnce="{
-        opacity: 1,
-        y: 0,
-        transition: {
-          delay: 250,
-        },
-      }"
-      class="relative"
-    >
+    <div class="relative">
       <div
         class="relative text-4xl italic leading-tight text-gray-900 font-display md:leading-tight dark:text-gray-100 md:text-6xl text-wrap-[balance] dark:drop-shadow"
       >

@@ -24,17 +24,6 @@ let logos = [
       >
         <div
           v-for="(logo, fileIdx) in logos"
-          :key="logo.id"
-          v-motion
-          :initial="{
-            opacity: 0,
-            y: 150,
-          }"
-          :visibleOnce="{
-            opacity: 1,
-            y: 0,
-          }"
-          :delay="250 + 200 * fileIdx"
           class="flex items-center justify-center p-2 border rounded-card dark:border-gray-700 dark:bg-gray-800"
         >
           <NuxtImg class="h-12" :src="logo.image" />

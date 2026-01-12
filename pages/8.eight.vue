@@ -44,21 +44,7 @@ let data = {
             class="mt-4"
           />
         </div>
-        <div
-          v-if="row.image"
-          v-motion
-          class="order-first block w-full h-full overflow-hidden rounded-card"
-          :initial="{ opacity: 0, scale: 0.5, y: 0 }"
-          :visibleOnce="{ opacity: 1, scale: 1, y: 0 }"
-          :duration="1000"
-          :delay="250"
-          :class="[
-            {
-              'lg:order-last': row?.image_position === 'right',
-              'lg:order-first': row?.image_position === 'left',
-            },
-          ]"
-        >
+        <div v-if="row.image">
           <NuxtImg
             :src="row.image"
             height="300"

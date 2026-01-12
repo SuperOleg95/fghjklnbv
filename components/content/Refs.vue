@@ -37,16 +37,6 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
         <div
           v-for="(logo, fileIdx) in items"
           :key="logo.id"
-          v-motion
-          :initial="{
-            opacity: 0,
-            y: 150,
-          }"
-          :visibleOnce="{
-            opacity: 1,
-            y: 0,
-          }"
-          :delay="250 + 200 * fileIdx"
           class="flex items-center justify-center"
         >
           <NuxtImg class="h-14 lg:h-32" :src="logo.image" />
@@ -68,16 +58,6 @@ watch(viewport.breakpoint, (newBreakpoint, oldBreakpoint) => {
         <div
           v-for="(logo, fileIdx) in items"
           :key="logo.id"
-          v-motion
-          :initial="{
-            opacity: 0,
-            y: 150,
-          }"
-          :visibleOnce="{
-            opacity: 1,
-            y: 0,
-          }"
-          :delay="250 + 200 * fileIdx"
           class="flex items-center justify-center"
         >
           <NuxtImg class="h-14 lg:h-32" :src="logo.image" />

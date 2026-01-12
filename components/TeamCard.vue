@@ -25,7 +25,7 @@ const flipped = ref(false);
       ></div>
 
       <!-- Back of Team Card -->
-      <Motionable
+      <!-- <Motionable
         v-motion
         name="team"
         :show="flipped"
@@ -68,7 +68,7 @@ const flipped = ref(false);
             </p>
           </NuxtLink>
         </div>
-      </Motionable>
+      </Motionable> -->
 
       <div class="absolute z-10 bottom-4 left-7 right-7">
         <TypographyHeadline

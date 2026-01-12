@@ -6,21 +6,7 @@ const { data: quote } = await useAsyncData("quote", () => {
 
 <template>
   <MainContainer>
-    <div
-      v-motion
-      :initial="{
-        opacity: 0,
-        y: 100,
-      }"
-      :visibleOnce="{
-        opacity: 1,
-        y: 0,
-        transition: {
-          delay: 750,
-        },
-      }"
-      class="relative"
-    >
+    <div class="relative">
       <TypographyTitle>{{ quote?.title }}</TypographyTitle>
       <div
         class="relative text-xl lg:text-3xl italic leading-tight text-gray-900 font-display md:leading-tight dark:text-gray-100 md:text-4xl text-wrap-[balance] dark:drop-shadow"
