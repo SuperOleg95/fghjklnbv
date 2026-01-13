@@ -1,0 +1,1 @@
+import{_ as s,d as t,e as n,h as o,a2 as a}from"./DnNjEQWY.js";const c={},_={class:"flex justify-center mx-2 md:px-0"},r={class:"w-[700px] sm:w-[850px] lg:w-[1000px] xl:w-[1280px]"};function d(e,i){return n(),t("div",_,[o("div",r,[a(e.$slots,"default")])])}const x=Object.assign(s(c,[["render",d]]),{__name:"MainContainer"});export{x as _};
