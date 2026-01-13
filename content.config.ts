@@ -18,9 +18,9 @@ export default defineContentConfig({
       type: "page",
       source: "news/*.md",
     }),
-    docs: defineCollection({
+    order: defineCollection({
       type: "page",
-      source: "docs/*.md",
+      source: "order/*.md",
     }),
     event: defineCollection({
       type: "page",
